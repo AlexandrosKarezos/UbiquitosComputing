@@ -2,8 +2,10 @@ package com.example.pizzaapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 import android.widget.TextView;
 
 import com.shuhart.stepview.StepView;
@@ -54,5 +56,20 @@ public class UebersichtActivity extends AppCompatActivity {
                 }
             }
         }, 3000);
+    }
+
+    public void abort(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void back(View view){
+        Intent intent = new Intent(this, MenueActivity.class);
+        startActivity(intent);
+    }
+
+    public void forward(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

@@ -19,8 +19,38 @@ public class MenueActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void bestellung(View view){
+    public void reservation(View view){
+        Intent intent = new Intent(this, ReservationActivity.class);
+        startActivity(intent);
+    }
+
+    public void feedback(View view){
+        Intent intent = new Intent(this, FeedbackActivity.class);
+        startActivity(intent);
+    }
+
+    public void login(View view){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    public void margeritha(View view){
         Intent intent = new Intent(this, MenueAuswahlActivity.class);
+        startActivity(intent);
+    }
+
+    public void prosciutto(View view){
+        Intent intent = new Intent(this, MenueAuswahlActivity.class);
+        startActivity(intent);
+    }
+
+    public void salami(View view){
+        Intent intent = new Intent(this, MenueAuswahlActivity.class);
+        startActivity(intent);
+    }
+
+    public void bestellung(View view){
+        Intent intent = new Intent(this, UebersichtActivity.class);
         startActivity(intent);
     }
 

@@ -28,12 +28,15 @@ public class MenueAuswahlActivity extends AppCompatActivity {
                 textView.setText("Menge: " + newVal);
             }
         });
-
-
+    }
+    //Menge muss in Variable geschrieben werden und weitergeleitet werden
+    public void confirm(View view){
+        Intent intent = new Intent(this, MenueActivity.class);
+        startActivity(intent);
     }
 
-    public void bestaetigen(View view) {
-        Intent intent = new Intent(this, UebersichtActivity.class);
+    public void abort(View view){
+        Intent intent = new Intent(this, MenueActivity.class);
         startActivity(intent);
     }
 }

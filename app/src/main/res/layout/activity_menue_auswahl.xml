@@ -35,13 +35,14 @@
         android:id="@+id/buttonBestaetigen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="bestaetigen"
+        android:onClick="confirm"
         android:text="Bestätigen" />
 
     <Button
         android:id="@+id/abortButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="abort"
         android:text="Abbrechen" />
 
 </LinearLayout>

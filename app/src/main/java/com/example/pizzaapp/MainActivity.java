@@ -19,18 +19,18 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void login(View view) {
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
-    }
-
-    public void reservation(View view) {
+    public void reservation(View view){
         Intent intent = new Intent(this, ReservationActivity.class);
         startActivity(intent);
     }
 
-    public void feedback(View view) {
+    public void feedback(View view){
         Intent intent = new Intent(this, FeedbackActivity.class);
+        startActivity(intent);
+    }
+
+    public void login(View view){
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 }

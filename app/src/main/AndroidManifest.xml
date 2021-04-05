@@ -10,12 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PizzaApp">
         <activity android:name=".FeedbackActivity"></activity>
-        <activity android:name=".ReservationActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".AbholenActivity" />
+        <activity android:name=".ReservationActivity" />
+        <activity android:name=".AbholenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".UebersichtActivity" />
         <activity android:name=".MenueAuswahlActivity" />
-        <activity android:name=".MenueActivity" />
+        <activity android:name=".MenueActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
