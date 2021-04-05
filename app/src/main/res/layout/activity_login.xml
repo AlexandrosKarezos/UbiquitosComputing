@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
     <Button
         android:id="@+id/buttonLogin"
@@ -46,16 +46,5 @@
         android:text="Feedback"
         app:layout_constraintStart_toEndOf="@+id/buttonReservation"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="409dp"
-        android:layout_height="680dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLogin"
-        app:srcCompat="@drawable/pizza1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

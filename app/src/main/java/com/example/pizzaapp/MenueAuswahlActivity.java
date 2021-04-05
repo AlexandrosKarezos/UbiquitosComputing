@@ -2,7 +2,9 @@ package com.example.pizzaapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
@@ -26,5 +28,12 @@ public class MenueAuswahlActivity extends AppCompatActivity {
                 textView.setText("Menge: " + newVal);
             }
         });
+
+
+    }
+
+    public void bestaetigen(View view) {
+        Intent intent = new Intent(this, UebersichtActivity.class);
+        startActivity(intent);
     }
 }
