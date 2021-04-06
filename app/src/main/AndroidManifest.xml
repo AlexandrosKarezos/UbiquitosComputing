@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PizzaApp">
-        <activity android:name=".FeedbackActivity"></activity>
+        <activity android:name=".BestellenLiefernActivity"></activity>
+        <activity android:name=".LiefernActivity" />
+        <activity android:name=".FeedbackActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".ReservationActivity" />
         <activity android:name=".AbholenActivity">

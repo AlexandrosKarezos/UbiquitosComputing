@@ -87,4 +87,19 @@ public class AbholenActivity extends AppCompatActivity {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
+
+    public void abort(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void back(View view){
+        Intent intent = new Intent(this, MenueActivity.class);
+        startActivity(intent);
+    }
+
+    public void forward(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }

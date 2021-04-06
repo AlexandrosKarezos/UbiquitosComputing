@@ -4,21 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AbholenActivity">
+    tools:context=".LiefernActivity">
 
     <Button
         android:id="@+id/buttonLogin"
-        android:layout_width="117dp"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:onClick="login"
         android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/buttonFeedback"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonMenu"
-        android:layout_width="86dp"
+        android:layout_width="94dp"
         android:layout_height="wrap_content"
         android:onClick="menue"
         android:text="Menü"
@@ -48,115 +49,181 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewKontakt"
+        android:id="@+id/textViewLfrAdr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kontakt:"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.064"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091" />
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="304dp"
+        android:layout_marginRight="304dp"
+        android:layout_marginBottom="2dp"
+        android:text="Lieferadresse:"
+        app:layout_constraintBottom_toTopOf="@+id/lSurnameInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMenu" />
 
     <EditText
-        android:id="@+id/surnameInput"
+        android:id="@+id/lSurnameInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="183dp"
+        android:layout_marginRight="183dp"
         android:ems="10"
         android:hint="Nachname"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.114"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.122" />
+        app:layout_constraintBottom_toTopOf="@+id/lVornameInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLfrAdr" />
 
     <EditText
-        android:id="@+id/nameInput"
+        android:id="@+id/lVornameInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="183dp"
+        android:layout_marginRight="183dp"
         android:ems="10"
         android:hint="Vorname"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.114"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.188" />
+        app:layout_constraintBottom_toTopOf="@+id/lStreetInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lSurnameInput" />
 
     <EditText
-        android:id="@+id/streetInput"
+        android:id="@+id/lStreetInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginRight="7dp"
         android:ems="10"
         android:hint="Strasse"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.114"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.253" />
+        app:layout_constraintBottom_toTopOf="@+id/lPlzInput"
+        app:layout_constraintEnd_toStartOf="@+id/lHnrInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lVornameInput" />
 
     <EditText
-        android:id="@+id/hNrInput"
-        android:layout_width="wrap_content"
+        android:id="@+id/lHnrInput"
+        android:layout_width="100sp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="248dp"
-        android:width="100sp"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:ems="10"
         android:hint="HNr"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.253" />
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/lOrtInput"
+        app:layout_constraintEnd_toStartOf="@+id/lLevelInput"
+        app:layout_constraintStart_toEndOf="@+id/lStreetInput"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
 
     <EditText
-        android:id="@+id/plzInput"
-        android:layout_width="wrap_content"
+        android:id="@+id/lPlzInput"
+        android:layout_width="100sp"
         android:layout_height="wrap_content"
-        android:width="100sp"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginBottom="34dp"
         android:ems="10"
         android:hint="PLZ"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.319" />
+        app:layout_constraintBottom_toTopOf="@+id/lEmailInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lStreetInput" />
 
     <EditText
-        android:id="@+id/cityInput"
+        android:id="@+id/lOrtInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginBottom="34dp"
         android:ems="10"
         android:hint="Ort"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.686"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.319" />
+        app:layout_constraintBottom_toTopOf="@+id/lEmailInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lPlzInput"
+        app:layout_constraintTop_toBottomOf="@+id/lStreetInput" />
 
     <EditText
-        android:id="@+id/emailInput"
-        android:layout_width="wrap_content"
+        android:id="@+id/lLevelInput"
+        android:layout_width="60sp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginBottom="510dp"
+        android:ems="10"
+        android:hint="Etage"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lHnrInput"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
+
+    <EditText
+        android:id="@+id/lEmailInput"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="143dp"
+        android:layout_marginRight="143dp"
         android:ems="10"
         android:hint="Email (Emanuel@gmx.de)"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.114"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.448" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lPlzInput" />
+
+    <TextView
+        android:id="@+id/textViewAnmerkungen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="303dp"
+        android:layout_marginRight="303dp"
+        android:text="Anmerkungen:"
+        app:layout_constraintBottom_toTopOf="@+id/lAnmerkungInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lEmailInput" />
+
+    <EditText
+        android:id="@+id/lAnmerkungInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginEnd="182dp"
+        android:layout_marginRight="182dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAnmerkungen" />
 
     <Button
         android:id="@+id/abortButton"
@@ -252,7 +319,5 @@
         app:sv_stepNumberTextSize="18sp"
         app:sv_stepPadding="4dp"
         app:sv_stepViewStyle="@style/StepView" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

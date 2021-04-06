@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BestellenLiefernActivity">
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:onClick="login"
+        android:text="Login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/buttonFeedback"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonMenu"
+        android:layout_width="94dp"
+        android:layout_height="wrap_content"
+        android:onClick="menue"
+        android:text="Menü"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/buttonReservation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonReservation"
+        android:layout_width="94dp"
+        android:layout_height="wrap_content"
+        android:onClick="reservation"
+        android:text="Reserv."
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/buttonFeedback"
+        app:layout_constraintStart_toEndOf="@+id/menuButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonFeedback"
+        android:layout_width="112dp"
+        android:layout_height="0dp"
+        android:onClick="feedback"
+        android:text="Feedback"
+        app:layout_constraintStart_toEndOf="@+id/buttonReservation"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewBestellung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bestellung"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.249"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.119" />
+
+    <TextView
+        android:id="@+id/textViewMenge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Menge"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.119" />
+
+    <TextView
+        android:id="@+id/textViewPreis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Preis"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.691"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.119" />
+
+    <TextView
+        android:id="@+id/textViewGesamt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gesamt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.219" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="37dp"
+        android:layout_height="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.957"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.158"
+        app:srcCompat="@android:drawable/ic_delete" />
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <View
+        android:id="@+id/divider6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="11dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/textViewBLfrAdr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGesamt" />
+
+    <TextView
+        android:id="@+id/textViewBLfrAdr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="305dp"
+        android:layout_marginRight="305dp"
+        android:text="Lieferadresse:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+
+    <EditText
+        android:id="@+id/blSurname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="185dp"
+        android:layout_marginRight="185dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/blName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBLfrAdr" />
+
+    <EditText
+        android:id="@+id/blStreet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Strasse"
+        app:layout_constraintBottom_toTopOf="@+id/blPlz"
+        app:layout_constraintEnd_toStartOf="@+id/blHnr"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blName" />
+
+    <EditText
+        android:id="@+id/blHnr"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="121dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="1dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="HNr"
+        app:layout_constraintBottom_toTopOf="@+id/blOrt"
+        app:layout_constraintEnd_toStartOf="@+id/blLevel"
+        app:layout_constraintStart_toEndOf="@+id/blStreet"
+        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+
+    <EditText
+        android:id="@+id/blLevel"
+        android:layout_width="60sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="121dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Etage"
+        app:layout_constraintStart_toEndOf="@+id/blHnr"
+        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+
+    <EditText
+        android:id="@+id/blName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="185dp"
+        android:layout_marginRight="185dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Vorname"
+        app:layout_constraintBottom_toTopOf="@+id/blStreet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blSurname" />
+
+    <EditText
+        android:id="@+id/blPlz"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="PLZ"
+        app:layout_constraintBottom_toTopOf="@+id/blEmail"
+        app:layout_constraintEnd_toStartOf="@+id/blOrt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blStreet" />
+
+    <EditText
+        android:id="@+id/blOrt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginRight="76dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Ort"
+        app:layout_constraintBottom_toTopOf="@+id/blEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/blPlz"
+        app:layout_constraintTop_toBottomOf="@+id/blStreet" />
+
+    <EditText
+        android:id="@+id/blEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="185dp"
+        android:layout_marginRight="185dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Email"
+        app:layout_constraintBottom_toTopOf="@+id/textViewAnmerkung"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blPlz" />
+
+    <TextView
+        android:id="@+id/textViewAnmerkung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="304dp"
+        android:layout_marginRight="304dp"
+        android:text="Anmerkungen:"
+        app:layout_constraintBottom_toTopOf="@+id/blAnmerkung"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blEmail" />
+
+    <EditText
+        android:id="@+id/blAnmerkung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="185dp"
+        android:layout_marginRight="185dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAnmerkung" />
+
+    <TextView
+        android:id="@+id/textViewBezahlVorgang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="119dp"
+        android:layout_marginLeft="119dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="89dp"
+        android:layout_marginRight="89dp"
+        android:text="Bezahlvorgang:"
+        app:layout_constraintBottom_toTopOf="@+id/radioButtonBargeld"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewAnmerkung"
+        app:layout_constraintTop_toBottomOf="@+id/blOrt" />
+
+    <RadioButton
+        android:id="@+id/radioButtonBargeld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bargeld"
+        app:layout_constraintBottom_toTopOf="@+id/radioButtonKreditkarte"
+        app:layout_constraintEnd_toStartOf="@+id/radioButtonPayPal"
+        app:layout_constraintStart_toEndOf="@+id/blAnmerkung"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBezahlVorgang" />
+
+    <RadioButton
+        android:id="@+id/radioButtonPayPal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:text="PayPal"
+        app:layout_constraintBottom_toTopOf="@+id/radioButtonKreditkarte"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/radioButtonBargeld"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBezahlVorgang" />
+
+    <RadioButton
+        android:id="@+id/radioButtonKreditkarte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="226dp"
+        android:layout_marginLeft="226dp"
+        android:layout_marginEnd="83dp"
+        android:layout_marginRight="83dp"
+        android:layout_marginBottom="14dp"
+        android:text="Kreditkarte"
+        app:layout_constraintBottom_toTopOf="@+id/kpBestellenButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioButtonBargeld" />
+
+    <Button
+        android:id="@+id/returnButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="back"
+        android:text="zurueck"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.003"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.84" />
+
+    <Button
+        android:id="@+id/abortButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="abort"
+        android:text="abbrechen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.361"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.84" />
+
+    <Button
+        android:id="@+id/kpBestellenButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginBottom="58dp"
+        android:onClick="buy"
+        android:text="Kostenpflichtig\nbestellen"
+        app:layout_constraintBottom_toTopOf="@+id/descriptionTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/abortButton" />
+
+    <TextView
+        android:id="@+id/stepTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif-black"
+        android:text="Schritt 1"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.975" />
+
+    <TextView
+        android:id="@+id/descriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif-light"
+        android:text="Schritt 2"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977" />
+
+    <com.shuhart.stepview.StepView
+        android:id="@+id/step_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976"
+        app:sv_doneCircleColor="@color/colorAccent"
+        app:sv_doneCircleRadius="12dp"
+        app:sv_doneStepLineColor="@color/colorAccent"
+        app:sv_doneStepMarkColor="@color/colorPrimary"
+        app:sv_nextStepLineColor="@color/colorAccent"
+        app:sv_nextTextColor="@color/colorAccent"
+        app:sv_selectedCircleColor="@color/colorAccent"
+        app:sv_selectedCircleRadius="12dp"
+        app:sv_selectedStepNumberColor="@color/colorPrimary"
+        app:sv_selectedTextColor="@color/colorAccent"
+        app:sv_stepLineWidth="1dp"
+        app:sv_stepNumberTextSize="18sp"
+        app:sv_stepPadding="4dp"
+        app:sv_stepViewStyle="@style/StepView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
