@@ -251,7 +251,7 @@
         app:layout_constraintVertical_bias="0.837" />
 
     <Button
-        android:id="@+id/forwardButton"
+        android:id="@+id/registerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="forward"

@@ -6,12 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class LoginActivity extends AppCompatActivity {
+public class RegistrierenActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_registrieren);
     }
 
     public void menue(View view){
@@ -34,8 +34,18 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void uRegister(View view){
-        Intent intent = new Intent(this, RegistrierenActivity.class);
+    public void abort(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void back(View view){
+        Intent intent = new Intent(this, MenueActivity.class);
+        startActivity(intent);
+    }
+
+    public void register(View view){
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }
