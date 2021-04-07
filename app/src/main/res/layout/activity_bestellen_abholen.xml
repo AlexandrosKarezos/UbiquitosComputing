@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BestellenLiefernActivity">
+    tools:context=".BestellenAbholenActivity">
 
     <Button
         android:id="@+id/buttonLogin"
@@ -120,277 +120,238 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.2" />
 
+    <TextView
+        android:id="@+id/textViewBAKontaktAdr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="281dp"
+        android:layout_marginRight="281dp"
+        android:text="Kontaktadresse:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider7" />
+
+    <EditText
+        android:id="@+id/baSurname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginEnd="173dp"
+        android:layout_marginRight="173dp"
+        android:layout_marginBottom="1dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Nachname"
+        app:layout_constraintBottom_toTopOf="@+id/baName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBAKontaktAdr" />
+
     <View
-        android:id="@+id/divider6"
+        android:id="@+id/divider7"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginBottom="11dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="22dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintBottom_toTopOf="@+id/textViewBAKontaktAdr"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewGesamt" />
 
-    <TextView
-        android:id="@+id/textViewBAKontaktAdr"
+    <EditText
+        android:id="@+id/baName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="305dp"
-        android:layout_marginRight="305dp"
-        android:text="Lieferadresse:"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider6" />
-
-    <EditText
-        android:id="@+id/baSurname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="185dp"
-        android:layout_marginRight="185dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/blName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewBAKontaktAdr" />
-
-    <EditText
-        android:id="@+id/blStreet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Strasse"
-        app:layout_constraintBottom_toTopOf="@+id/blPlz"
-        app:layout_constraintEnd_toStartOf="@+id/blHnr"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/blName" />
-
-    <EditText
-        android:id="@+id/blHnr"
-        android:layout_width="100sp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
-        android:layout_marginLeft="9dp"
-        android:layout_marginTop="121dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="1dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="HNr"
-        app:layout_constraintBottom_toTopOf="@+id/blOrt"
-        app:layout_constraintEnd_toStartOf="@+id/blLevel"
-        app:layout_constraintStart_toEndOf="@+id/blStreet"
-        app:layout_constraintTop_toBottomOf="@+id/divider6" />
-
-    <EditText
-        android:id="@+id/blLevel"
-        android:layout_width="60sp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginTop="121dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Etage"
-        app:layout_constraintStart_toEndOf="@+id/blHnr"
-        app:layout_constraintTop_toBottomOf="@+id/divider6" />
-
-    <EditText
-        android:id="@+id/blName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="185dp"
-        android:layout_marginRight="185dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginEnd="173dp"
+        android:layout_marginRight="173dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Vorname"
-        app:layout_constraintBottom_toTopOf="@+id/blStreet"
+        app:layout_constraintBottom_toTopOf="@+id/baStreet"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/baSurname" />
 
     <EditText
-        android:id="@+id/blPlz"
+        android:id="@+id/baStreet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="6dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Strasse"
+        app:layout_constraintBottom_toTopOf="@+id/baPlz"
+        app:layout_constraintEnd_toStartOf="@+id/baHNr"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/baName" />
+
+    <EditText
+        android:id="@+id/baHNr"
         android:layout_width="100sp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginRight="66dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="HNr"
+        app:layout_constraintBottom_toTopOf="@+id/baOrt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/baStreet"
+        app:layout_constraintTop_toBottomOf="@+id/divider7" />
+
+    <EditText
+        android:id="@+id/baPlz"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="PLZ"
-        app:layout_constraintBottom_toTopOf="@+id/blEmail"
-        app:layout_constraintEnd_toStartOf="@+id/blOrt"
+        app:layout_constraintBottom_toTopOf="@+id/baEmail"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/blStreet" />
+        app:layout_constraintTop_toBottomOf="@+id/baStreet" />
 
     <EditText
-        android:id="@+id/blOrt"
+        android:id="@+id/baOrt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
-        android:layout_marginLeft="9dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginRight="76dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginRight="53dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Ort"
-        app:layout_constraintBottom_toTopOf="@+id/blEmail"
+        app:layout_constraintBottom_toTopOf="@+id/baEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/blPlz"
-        app:layout_constraintTop_toBottomOf="@+id/blStreet" />
+        app:layout_constraintTop_toBottomOf="@+id/baHNr" />
 
     <EditText
-        android:id="@+id/blEmail"
+        android:id="@+id/baEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="185dp"
-        android:layout_marginRight="185dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginEnd="172dp"
+        android:layout_marginRight="172dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Email"
-        app:layout_constraintBottom_toTopOf="@+id/textViewAnmerkung"
+        app:layout_constraintBottom_toTopOf="@+id/radioButtonBABargeld"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/blPlz" />
-
-    <TextView
-        android:id="@+id/textViewAnmerkung"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="304dp"
-        android:layout_marginRight="304dp"
-        android:text="Anmerkungen:"
-        app:layout_constraintBottom_toTopOf="@+id/blAnmerkung"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/blEmail" />
-
-    <EditText
-        android:id="@+id/blAnmerkung"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="185dp"
-        android:layout_marginRight="185dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAnmerkung" />
-
-    <TextView
-        android:id="@+id/textViewBezahlVorgang"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="119dp"
-        android:layout_marginLeft="119dp"
-        android:layout_marginTop="47dp"
-        android:layout_marginEnd="89dp"
-        android:layout_marginRight="89dp"
-        android:text="Bezahlvorgang:"
-        app:layout_constraintBottom_toTopOf="@+id/radioButtonBargeld"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textViewAnmerkung"
-        app:layout_constraintTop_toBottomOf="@+id/blOrt" />
+        app:layout_constraintTop_toBottomOf="@+id/baPlz" />
 
     <RadioButton
-        android:id="@+id/radioButtonBargeld"
+        android:id="@+id/radioButtonBAPayPal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bargeld"
-        app:layout_constraintBottom_toTopOf="@+id/radioButtonKreditkarte"
-        app:layout_constraintEnd_toStartOf="@+id/radioButtonPayPal"
-        app:layout_constraintStart_toEndOf="@+id/blAnmerkung"
-        app:layout_constraintTop_toBottomOf="@+id/textViewBezahlVorgang" />
-
-    <RadioButton
-        android:id="@+id/radioButtonPayPal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginEnd="209dp"
+        android:layout_marginRight="209dp"
         android:text="PayPal"
-        app:layout_constraintBottom_toTopOf="@+id/radioButtonKreditkarte"
+        app:layout_constraintBottom_toTopOf="@+id/radioButtonBAKreditkarte"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/radioButtonBargeld"
-        app:layout_constraintTop_toBottomOf="@+id/textViewBezahlVorgang" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioButtonBABargeld" />
 
-    <RadioButton
-        android:id="@+id/radioButtonKreditkarte"
+    <TextView
+        android:id="@+id/textViewBABezahlen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="226dp"
-        android:layout_marginLeft="226dp"
-        android:layout_marginEnd="83dp"
-        android:layout_marginRight="83dp"
-        android:layout_marginBottom="14dp"
-        android:text="Kreditkarte"
-        app:layout_constraintBottom_toTopOf="@+id/kpBestellenButton"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="118dp"
+        android:text="Bezahlvorgang:"
+        app:layout_constraintBottom_toTopOf="@+id/returnButton"
+        app:layout_constraintEnd_toStartOf="@+id/radioButtonBABargeld"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButtonBargeld" />
+        app:layout_constraintTop_toBottomOf="@+id/baEmail" />
+
+    <RadioButton
+        android:id="@+id/radioButtonBABargeld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginEnd="204dp"
+        android:layout_marginRight="204dp"
+        android:layout_marginBottom="1dp"
+        android:text="Bargeld"
+        app:layout_constraintBottom_toTopOf="@+id/radioButtonBAPayPal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewBABezahlen"
+        app:layout_constraintTop_toBottomOf="@+id/baEmail" />
 
     <Button
         android:id="@+id/returnButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="121dp"
         android:onClick="back"
         android:text="zurueck"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.003"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.84" />
+        app:layout_constraintEnd_toStartOf="@+id/abortButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBABezahlen" />
 
     <Button
         android:id="@+id/abortButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
         android:onClick="abort"
         android:text="abbrechen"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.361"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.84" />
+        app:layout_constraintEnd_toStartOf="@+id/kpBestellenButton"
+        app:layout_constraintStart_toEndOf="@+id/returnButton"
+        app:layout_constraintTop_toBottomOf="@+id/radioButtonBAKreditkarte" />
 
     <Button
         android:id="@+id/kpBestellenButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
-        android:layout_marginLeft="9dp"
-        android:layout_marginBottom="58dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="196dp"
         android:onClick="buy"
         android:text="Kostenpflichtig\nbestellen"
-        app:layout_constraintBottom_toTopOf="@+id/descriptionTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/abortButton" />
+        app:layout_constraintStart_toEndOf="@+id/abortButton"
+        app:layout_constraintTop_toBottomOf="@+id/baOrt" />
+
+    <RadioButton
+        android:id="@+id/radioButtonBAKreditkarte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginEnd="182dp"
+        android:layout_marginRight="182dp"
+        android:layout_marginBottom="7dp"
+        android:text="Kreditkarte"
+        app:layout_constraintBottom_toTopOf="@+id/abortButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioButtonBAPayPal" />
 
     <TextView
         android:id="@+id/stepTextView"
