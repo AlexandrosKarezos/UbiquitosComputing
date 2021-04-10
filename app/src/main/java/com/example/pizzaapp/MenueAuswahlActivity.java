@@ -28,6 +28,12 @@ public class MenueAuswahlActivity extends AppCompatActivity {
                 textView.setText("Menge: " + newVal);
             }
         });
+
+        Intent intent = getIntent();
+        String pizzaname = intent.getExtras().getString("pizzaname");
+
+        TextView nameTV = (TextView) findViewById(R.id.pizzaname);
+        nameTV.setText(pizzaname);
     }
     //Menge muss in Variable geschrieben werden und weitergeleitet werden
     public void confirm(View view){

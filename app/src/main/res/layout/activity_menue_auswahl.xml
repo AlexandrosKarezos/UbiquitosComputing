@@ -9,6 +9,14 @@
     tools:context=".MenueAuswahlActivity">
 
     <TextView
+        android:id="@+id/pizzaname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bestellmenge"

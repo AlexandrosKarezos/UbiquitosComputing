@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,6 +49,21 @@ public class MenueActivity extends AppCompatActivity {
 
         linearLayout.addView(margerithaTv);
         linearLayout.addView(salamiTv);
+
+        CheckBox vegetarischCB = (CheckBox) findViewById(R.id.checkBoxVegetarisch);
+        vegetarischCB.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                //is chkIos checked?
+                if (((CheckBox) v).isChecked()) {
+                    //Case 1
+                }
+                else{
+                    //Case 2
+                }
+            }
+        });
     }
 
     public void menue(View view){
@@ -71,7 +87,13 @@ public class MenueActivity extends AppCompatActivity {
     }
 
     public void menuAuswahl(View view){
+        TextView test = (TextView) view;
+        String name = test.getText().toString();
+        String[] lines = name.split( "\n\t" );
+        System.out.println("test: "+lines[1]);
+
         Intent intent = new Intent(this, MenueAuswahlActivity.class);
+        intent.putExtra("pizzaname",lines[1]);
         startActivity(intent);
     }
 
