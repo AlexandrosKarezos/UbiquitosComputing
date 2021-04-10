@@ -9,19 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PizzaApp">
-        <activity android:name=".RegistrierenActivity"></activity>
+        <activity android:name=".BestellungsverlaufActivity"/>
+        <activity android:name=".ProfilBearbeitenActivity"/>
+        <activity android:name=".BenutzerAngemeldetActivity"/>
+        <activity android:name=".RegistrierenActivity" />
         <activity android:name=".BestellenAbholenActivity" />
         <activity android:name=".BestellenLiefernActivity" />
         <activity android:name=".LiefernActivity" />
         <activity android:name=".FeedbackActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".ReservationActivity" />
-        <activity android:name=".AbholenActivity">
-        </activity>
+        <activity android:name=".AbholenActivity" />
         <activity android:name=".UebersichtActivity" />
         <activity android:name=".MenueAuswahlActivity" />
-        <activity android:name=".MenueActivity">
-        </activity>
+        <activity android:name=".MenueActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
