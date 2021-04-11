@@ -1,31 +1,45 @@
 package com.example.pizzaapp;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.NumberPicker;
 import android.widget.TextView;
+import android.widget.TimePicker;
+
+import com.google.android.material.timepicker.TimeFormat;
 
 import org.w3c.dom.Text;
 
+import java.sql.Time;
 import java.text.DateFormat;
+import java.time.Instant;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class ReservationActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
     TextView textView;
     TextView textView1;
+    Button timeButton;
+    int hour, minute;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservation);
+
+        timeButton = findViewById(R.id.timeButton);
 
         Button button = (Button) findViewById(R.id.buttonDate);
         button.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +75,21 @@ public class ReservationActivity extends AppCompatActivity implements DatePicker
         textView1.setText(currentDateString);
     }
 
+    public void popTimePicker(View view) {
+        TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                hour = selectedHour;
+                minute = selectedMinute;
+                timeButton.setText(String.format(Locale.getDefault(), "%02d:%02d", hour,minute));
+            }
+        };
+        int style = AlertDialog.THEME_HOLO_DARK;
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, style, onTimeSetListener, hour, minute, true);
+        timePickerDialog.setTitle("Select Time");
+        timePickerDialog.show();
+    }
+
     public void menue(View view){
         Intent intent = new Intent(this, MenueActivity.class);
         startActivity(intent);
@@ -90,5 +119,6 @@ public class ReservationActivity extends AppCompatActivity implements DatePicker
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
 
 }
