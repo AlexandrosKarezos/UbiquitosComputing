@@ -25,13 +25,14 @@
             android:showDividers="middle|beginning|end" />
     </ScrollView>
 
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="110sp"
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="117dp"
         android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
+        android:onClick="login"
+        android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonFeedback"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button

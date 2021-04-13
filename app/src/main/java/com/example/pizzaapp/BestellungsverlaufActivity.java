@@ -20,10 +20,6 @@ public class BestellungsverlaufActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bestellungsverlauf);
-        Spinner dropdown = findViewById(R.id.spinner1);
-        String[] items = new String[]{"Profil bearbeiten", "Bestellungsverlauf", "Logout"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
-        dropdown.setAdapter(adapter);
 
         LinearLayout linearLayout = (LinearLayout)findViewById(R.id.bestellungsverlauf_linear_layout);
 
@@ -32,6 +28,11 @@ public class BestellungsverlaufActivity extends AppCompatActivity {
         tableTopTv.setId(tableTopTv.generateViewId());
         tableTopTv.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         tableTopTv.setClickable(true);
+    }
+
+    public void login(View view){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 
     public void menue(View view){

@@ -6,13 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".BenutzerAngemeldetActivity">
 
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="110sp"
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="117dp"
         android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
+        android:onClick="login"
+        android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonFeedback"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -45,5 +46,38 @@
         android:text="Feedback"
         app:layout_constraintStart_toEndOf="@+id/buttonReservation"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonBestellungsverlauf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="144dp"
+        android:onClick="orderHistory"
+        android:text="Bestellungsverlauf"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
+
+    <Button
+        android:id="@+id/buttonProfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="profile"
+        android:text="Profil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonBestellungsverlauf" />
+
+    <Button
+        android:id="@+id/buttonLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="248dp"
+        android:onClick="logout"
+        android:text="Logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonProfil" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

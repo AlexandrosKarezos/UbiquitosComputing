@@ -14,11 +14,11 @@ public class BenutzerAngemeldetActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_benutzer_angemeldet);
+    }
 
-        Spinner dropdown = findViewById(R.id.spinner1);
-        String[] items = new String[]{"Profil bearbeiten", "Bestellungsverlauf", "Logout"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
-        dropdown.setAdapter(adapter);
+    public void login(View view){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 
     public void menue(View view){
@@ -33,6 +33,21 @@ public class BenutzerAngemeldetActivity extends AppCompatActivity {
 
     public void feedback(View view){
         Intent intent = new Intent(this, FeedbackActivity.class);
+        startActivity(intent);
+    }
+
+    public void orderHistory(View view){
+        Intent intent = new Intent(this, BestellungsverlaufActivity.class);
+        startActivity(intent);
+    }
+
+    public void profile(View view){
+        Intent intent = new Intent(this, ProfilBearbeitenActivity.class);
+        startActivity(intent);
+    }
+
+    public void logout(View view){
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

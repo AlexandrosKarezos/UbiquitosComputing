@@ -6,13 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".ProfilBearbeitenActivity">
 
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="110sp"
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="117dp"
         android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
+        android:onClick="login"
+        android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonFeedback"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -202,5 +203,19 @@
         android:text="uebernehmen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewNewUserPw" />
+
+    <CheckBox
+        android:id="@+id/checkBoxChgProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginLeft="104dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        android:text="Profil bearbeiten"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewNewUserDetails"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
