@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "17222063339",
+    "firebase_url": "https://pizzaphilippe-3c666-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "pizzaphilippe-3c666",
+    "storage_bucket": "pizzaphilippe-3c666.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:17222063339:android:86a52afc9b035daf641aae",
+        "android_client_info": {
+          "package_name": "com.example.pizzaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "17222063339-qm0mu8vgcc93ufoudkfako3s2a4kbhkd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4nFIIzlZaOv3SR9jWeZaCKPPq5D9M1GM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "17222063339-qm0mu8vgcc93ufoudkfako3s2a4kbhkd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:17222063339:android:4f8142bc6e5345d8641aae",
+        "android_client_info": {
+          "package_name": "com.example.pizzaphilippe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "17222063339-qm0mu8vgcc93ufoudkfako3s2a4kbhkd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4nFIIzlZaOv3SR9jWeZaCKPPq5D9M1GM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "17222063339-qm0mu8vgcc93ufoudkfako3s2a4kbhkd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
