@@ -30,8 +30,7 @@ import java.util.Locale;
 public class ReservationActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
     TextView textView;
-    TextView textView1;
-    Button timeButton;
+    TextView resTimeTV;
     int hour, minute;
 
     @Override
@@ -39,7 +38,7 @@ public class ReservationActivity extends AppCompatActivity implements DatePicker
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservation);
 
-        timeButton = findViewById(R.id.timeButton);
+        resTimeTV = (TextView) findViewById(R.id.textViewResTime);
 
         Button button = (Button) findViewById(R.id.buttonDate);
         button.setOnClickListener(new View.OnClickListener() {
@@ -81,12 +80,12 @@ public class ReservationActivity extends AppCompatActivity implements DatePicker
             public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                 hour = selectedHour;
                 minute = selectedMinute;
-                timeButton.setText(String.format(Locale.getDefault(), "%02d:%02d", hour,minute));
+                resTimeTV.setText(String.format(Locale.getDefault(), "%02d:%02d Uhr", hour,minute));
             }
         };
         int style = AlertDialog.THEME_HOLO_DARK;
         TimePickerDialog timePickerDialog = new TimePickerDialog(this, style, onTimeSetListener, hour, minute, true);
-        timePickerDialog.setTitle("Select Time");
+        timePickerDialog.setTitle("Uhrzeit waehlen");
         timePickerDialog.show();
     }
 

@@ -90,7 +90,6 @@ public class MenueActivity extends AppCompatActivity {
         TextView test = (TextView) view;
         String name = test.getText().toString();
         String[] lines = name.split( "\n\t" );
-        System.out.println("test: "+lines[1]);
 
         Intent intent = new Intent(this, MenueAuswahlActivity.class);
         intent.putExtra("pizzaname",lines[1]);

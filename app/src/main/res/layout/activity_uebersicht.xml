@@ -126,8 +126,9 @@
         android:layout_marginRight="114dp"
         android:text="Hinweis: \nEine Lieferung ist erst ab einem min. Einkaufswert von 20€ möglich!"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButtonDeliver" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <Button
         android:id="@+id/abortButton"
@@ -224,30 +225,34 @@
         app:sv_stepPadding="4dp"
         app:sv_stepViewStyle="@style/StepView" />
 
-    <RadioButton
-        android:id="@+id/radioButtonPickUp"
+    <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginEnd="260dp"
-        android:layout_marginRight="260dp"
-        android:text="selbst abholen"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewGesamt" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewGesamt">
 
-    <RadioButton
-        android:id="@+id/radioButtonDeliver"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginEnd="311dp"
-        android:layout_marginRight="311dp"
-        android:text="liefern"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButtonPickUp" />
+        <RadioButton
+            android:id="@+id/radioButtonDeliver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginEnd="311dp"
+            android:layout_marginRight="311dp"
+            android:text="liefern" />
+
+        <RadioButton
+            android:id="@+id/radioButtonPickUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginEnd="260dp"
+            android:layout_marginRight="260dp"
+            android:text="selbst abholen" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -41,27 +41,6 @@ public class AbholenActivity extends AppCompatActivity {
         abortButton = (Button) findViewById(R.id.abortButton);
         returnButton = (Button) findViewById(R.id.returnButton);
 
-        submitButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                surname = surnameInput.getText().toString();
-                name = nameInput.getText().toString();
-                street = streetInput.getText().toString();
-                sNumber = hNrInput.getText().toString();
-                plz = Integer.valueOf(plzInput.getText().toString());
-                city = cityInput.getText().toString();
-                email = emailInput.getText().toString();
-
-                showToast(surname);
-                showToast(name);
-                showToast(street);
-                showToast(sNumber);
-                showToast(String.valueOf(plz));
-                showToast(city);
-                showToast(email);
-            }
-        });
-
     }
 
     private void showToast(String text){
