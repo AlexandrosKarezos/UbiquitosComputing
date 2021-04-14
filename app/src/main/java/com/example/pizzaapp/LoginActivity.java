@@ -5,13 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
-public class LoginActivity extends AppCompatActivity {
+import com.google.firebase.auth.FirebaseAuth;
 
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+    private TextView register;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        register =(TextView) findViewById(R.id.buttonlRegister);
+        register.setOnClickListener(this);
     }
 
     public void menue(View view){
@@ -37,5 +42,14 @@ public class LoginActivity extends AppCompatActivity {
     public void uRegister(View view){
         Intent intent = new Intent(this, RegistrierenActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()){
+            case R.id.buttonlRegister:
+                startActivity(new Intent(this,RegistrierenActivity.class));
+                break;
+        }
     }
 }
