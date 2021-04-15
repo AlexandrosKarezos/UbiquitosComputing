@@ -139,10 +139,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="11dp"
-        android:layout_marginEnd="305dp"
-        android:layout_marginRight="305dp"
         android:text="Lieferadresse:"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider6" />
 
@@ -152,13 +149,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginEnd="185dp"
-        android:layout_marginRight="185dp"
         android:ems="10"
+        android:hint="Name"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/blName"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewBAKontaktAdr" />
 
@@ -168,13 +161,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
         android:ems="10"
+        android:hint="Strasse"
         android:inputType="textPersonName"
-        android:text="Strasse"
-        app:layout_constraintBottom_toTopOf="@+id/blPlz"
-        app:layout_constraintEnd_toStartOf="@+id/blHnr"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/blName" />
 
@@ -184,15 +173,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="9dp"
         android:layout_marginLeft="9dp"
-        android:layout_marginTop="121dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="1dp"
+        android:layout_marginTop="122dp"
         android:ems="10"
+        android:hint="HNr"
         android:inputType="textPersonName"
-        android:text="HNr"
-        app:layout_constraintBottom_toTopOf="@+id/blOrt"
-        app:layout_constraintEnd_toStartOf="@+id/blLevel"
         app:layout_constraintStart_toEndOf="@+id/blStreet"
         app:layout_constraintTop_toBottomOf="@+id/divider6" />
 
@@ -200,12 +184,12 @@
         android:id="@+id/blLevel"
         android:layout_width="60sp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginTop="121dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="122dp"
         android:ems="10"
+        android:hint="Etage"
         android:inputType="textPersonName"
-        android:text="Etage"
         app:layout_constraintStart_toEndOf="@+id/blHnr"
         app:layout_constraintTop_toBottomOf="@+id/divider6" />
 
@@ -215,13 +199,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginEnd="185dp"
-        android:layout_marginRight="185dp"
         android:ems="10"
+        android:hint="Vorname"
         android:inputType="textPersonName"
-        android:text="Vorname"
-        app:layout_constraintBottom_toTopOf="@+id/blStreet"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/baSurname" />
 
@@ -232,10 +212,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:ems="10"
+        android:hint="PLZ"
         android:inputType="textPersonName"
-        android:text="PLZ"
-        app:layout_constraintBottom_toTopOf="@+id/blEmail"
-        app:layout_constraintEnd_toStartOf="@+id/blOrt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/blStreet" />
 
@@ -245,13 +223,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="9dp"
         android:layout_marginLeft="9dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginRight="76dp"
         android:ems="10"
+        android:hint="Ort"
         android:inputType="textPersonName"
-        android:text="Ort"
-        app:layout_constraintBottom_toTopOf="@+id/blEmail"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/blPlz"
         app:layout_constraintTop_toBottomOf="@+id/blStreet" />
 
@@ -261,13 +235,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginEnd="185dp"
-        android:layout_marginRight="185dp"
+        android:width="220sp"
         android:ems="10"
+        android:hint="Email (Emanuel@gmx.de)"
         android:inputType="textPersonName"
-        android:text="Email"
-        app:layout_constraintBottom_toTopOf="@+id/textViewAnmerkung"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/blPlz" />
 
@@ -277,13 +248,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginEnd="304dp"
-        android:layout_marginRight="304dp"
+        android:layout_marginTop="26dp"
         android:text="Anmerkungen:"
-        app:layout_constraintBottom_toTopOf="@+id/blAnmerkung"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/blEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewBezahlVorgang" />
 
     <EditText
         android:id="@+id/blAnmerkung"
@@ -292,12 +260,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="1dp"
-        android:layout_marginEnd="185dp"
-        android:layout_marginRight="185dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewAnmerkung" />
 
@@ -305,148 +270,76 @@
         android:id="@+id/textViewBezahlVorgang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="119dp"
-        android:layout_marginLeft="119dp"
-        android:layout_marginTop="47dp"
-        android:layout_marginEnd="89dp"
-        android:layout_marginRight="89dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="17dp"
         android:text="Bezahlvorgang:"
-        app:layout_constraintBottom_toTopOf="@+id/radioButtonBargeld"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textViewAnmerkung"
-        app:layout_constraintTop_toBottomOf="@+id/blOrt" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blEmail" />
 
     <RadioButton
         android:id="@+id/radioButtonBargeld"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
         android:text="Bargeld"
-        app:layout_constraintBottom_toTopOf="@+id/radioButtonKreditkarte"
-        app:layout_constraintEnd_toStartOf="@+id/radioButtonPayPal"
-        app:layout_constraintStart_toEndOf="@+id/blAnmerkung"
-        app:layout_constraintTop_toBottomOf="@+id/textViewBezahlVorgang" />
+        app:layout_constraintStart_toEndOf="@+id/textViewBezahlVorgang"
+        app:layout_constraintTop_toBottomOf="@+id/blEmail" />
 
     <RadioButton
         android:id="@+id/radioButtonPayPal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="4dp"
         android:text="PayPal"
-        app:layout_constraintBottom_toTopOf="@+id/radioButtonKreditkarte"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/radioButtonBargeld"
-        app:layout_constraintTop_toBottomOf="@+id/textViewBezahlVorgang" />
+        app:layout_constraintTop_toBottomOf="@+id/blEmail" />
 
     <RadioButton
         android:id="@+id/radioButtonKreditkarte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="226dp"
-        android:layout_marginLeft="226dp"
-        android:layout_marginEnd="83dp"
-        android:layout_marginRight="83dp"
-        android:layout_marginBottom="14dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="49dp"
         android:text="Kreditkarte"
-        app:layout_constraintBottom_toTopOf="@+id/kpBestellenButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButtonBargeld" />
+        app:layout_constraintStart_toEndOf="@+id/radioButtonPayPal"
+        app:layout_constraintTop_toBottomOf="@+id/blOrt" />
 
     <Button
         android:id="@+id/returnButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
         android:onClick="back"
         android:text="zurueck"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.003"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.84" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blAnmerkung" />
 
     <Button
         android:id="@+id/abortButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
         android:onClick="abort"
         android:text="abbrechen"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.361"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.84" />
+        app:layout_constraintStart_toEndOf="@+id/returnButton"
+        app:layout_constraintTop_toBottomOf="@+id/blAnmerkung" />
 
     <Button
         android:id="@+id/kpBestellenButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
-        android:layout_marginLeft="9dp"
-        android:layout_marginBottom="58dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="120dp"
         android:onClick="buy"
         android:text="Kostenpflichtig\nbestellen"
-        app:layout_constraintBottom_toTopOf="@+id/descriptionTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/abortButton" />
-
-    <TextView
-        android:id="@+id/stepTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif-black"
-        android:text="Schritt 1"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975" />
-
-    <TextView
-        android:id="@+id/descriptionTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif-light"
-        android:text="Schritt 2"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977" />
-
-    <com.shuhart.stepview.StepView
-        android:id="@+id/step_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976"
-        app:sv_doneCircleColor="@color/colorAccent"
-        app:sv_doneCircleRadius="12dp"
-        app:sv_doneStepLineColor="@color/colorAccent"
-        app:sv_doneStepMarkColor="@color/colorPrimary"
-        app:sv_nextStepLineColor="@color/colorAccent"
-        app:sv_nextTextColor="@color/colorAccent"
-        app:sv_selectedCircleColor="@color/colorAccent"
-        app:sv_selectedCircleRadius="12dp"
-        app:sv_selectedStepNumberColor="@color/colorPrimary"
-        app:sv_selectedTextColor="@color/colorAccent"
-        app:sv_stepLineWidth="1dp"
-        app:sv_stepNumberTextSize="18sp"
-        app:sv_stepPadding="4dp"
-        app:sv_stepViewStyle="@style/StepView" />
+        app:layout_constraintStart_toEndOf="@+id/abortButton"
+        app:layout_constraintTop_toBottomOf="@+id/radioButtonPayPal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

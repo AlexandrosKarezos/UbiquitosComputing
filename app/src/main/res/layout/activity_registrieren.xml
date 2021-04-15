@@ -54,12 +54,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="307dp"
-        android:layout_marginRight="307dp"
-        android:layout_marginBottom="1dp"
         android:text="Registrieren:"
-        app:layout_constraintBottom_toTopOf="@+id/rSurnameInput"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonMenu" />
 
@@ -70,14 +65,9 @@
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="1dp"
-        android:layout_marginEnd="176dp"
-        android:layout_marginRight="176dp"
-        android:layout_marginBottom="1dp"
         android:ems="10"
         android:hint="Nachname"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/rNameInput"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewRRegistrieren" />
 
@@ -87,13 +77,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginEnd="176dp"
-        android:layout_marginRight="176dp"
         android:ems="10"
         android:hint="Vorname"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/rStreetInput"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rSurnameInput" />
 
@@ -101,15 +87,11 @@
         android:id="@+id/rStreetInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="11dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
         android:ems="10"
         android:hint="Strasse"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/rPlzInput"
-        app:layout_constraintEnd_toStartOf="@+id/rHnrInput"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rNameInput" />
 
@@ -117,14 +99,12 @@
         android:id="@+id/rHnrInput"
         android:layout_width="100sp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
         android:layout_marginTop="128dp"
-        android:layout_marginBottom="1dp"
         android:ems="10"
         android:hint="HNr"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/rCityInput"
         app:layout_constraintStart_toEndOf="@+id/rStreetInput"
         app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
 
@@ -132,15 +112,11 @@
         android:id="@+id/rPlzInput"
         android:layout_width="100sp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginRight="17dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
         android:ems="10"
         android:hint="PLZ"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/rEmailInput"
-        app:layout_constraintEnd_toStartOf="@+id/rCityInput"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rStreetInput" />
 
@@ -148,12 +124,11 @@
         android:id="@+id/rCityInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="17dp"
-        android:layout_marginLeft="17dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
         android:ems="10"
         android:hint="Ort"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/rEmailInput"
         app:layout_constraintStart_toEndOf="@+id/rPlzInput"
         app:layout_constraintTop_toBottomOf="@+id/rStreetInput" />
 
@@ -161,17 +136,12 @@
         android:id="@+id/rEmailInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginEnd="165dp"
-        android:layout_marginRight="165dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
         android:width="220sp"
         android:ems="10"
         android:hint="Email (Emanuel@gmx.de)"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/rUsernameInput"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rPlzInput" />
 
@@ -182,12 +152,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="26dp"
-        android:layout_marginEnd="292dp"
-        android:layout_marginRight="292dp"
-        android:layout_marginBottom="3dp"
         android:text="Benutzerdaten:"
-        app:layout_constraintBottom_toTopOf="@+id/rUsernameInput"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rEmailInput" />
 
@@ -198,12 +163,9 @@
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="48dp"
-        android:layout_marginEnd="176dp"
-        android:layout_marginRight="176dp"
         android:ems="10"
         android:hint="neuer Benutzername"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rEmailInput" />
 
@@ -213,12 +175,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginEnd="176dp"
-        android:layout_marginRight="176dp"
         android:ems="10"
         android:hint="neues Passwort"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rUsernameInput" />
 
@@ -226,42 +185,34 @@
         android:id="@+id/abortButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginEnd="37dp"
-        android:layout_marginRight="37dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="125dp"
         android:onClick="abort"
         android:text="Abbrechen"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/registerButton"
         app:layout_constraintStart_toEndOf="@+id/returnButton"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.837" />
+        app:layout_constraintTop_toBottomOf="@+id/rPasswordInput" />
 
     <Button
         android:id="@+id/returnButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="125dp"
         android:onClick="back"
         android:text="zurueck"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.837" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rPasswordInput" />
 
     <Button
         android:id="@+id/registerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="308dp"
         android:onClick="register"
         android:text="registrieren"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.837" />
+        app:layout_constraintStart_toEndOf="@+id/abortButton"
+        app:layout_constraintTop_toBottomOf="@+id/rCityInput" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

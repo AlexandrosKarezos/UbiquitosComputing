@@ -55,13 +55,7 @@
         android:layout_marginStart="17dp"
         android:layout_marginLeft="17dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="304dp"
-        android:layout_marginRight="304dp"
-        android:layout_marginBottom="2dp"
         android:text="Lieferadresse:"
-        app:layout_constraintBottom_toTopOf="@+id/lSurnameInput"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonMenu" />
 
@@ -72,13 +66,9 @@
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="2dp"
-        android:layout_marginEnd="183dp"
-        android:layout_marginRight="183dp"
         android:ems="10"
         android:hint="Nachname"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/lVornameInput"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewLfrAdr" />
 
@@ -89,13 +79,9 @@
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="1dp"
-        android:layout_marginEnd="183dp"
-        android:layout_marginRight="183dp"
         android:ems="10"
         android:hint="Vorname"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/lStreetInput"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lSurnameInput" />
 
@@ -106,13 +92,9 @@
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="1dp"
-        android:layout_marginEnd="7dp"
-        android:layout_marginRight="7dp"
         android:ems="10"
         android:hint="Strasse"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/lPlzInput"
-        app:layout_constraintEnd_toStartOf="@+id/lHnrInput"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lVornameInput" />
 
@@ -120,16 +102,13 @@
         android:id="@+id/lHnrInput"
         android:layout_width="100sp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginLeft="7dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="127dp"
         android:ems="10"
         android:hint="HNr"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/lOrtInput"
-        app:layout_constraintEnd_toStartOf="@+id/lLevelInput"
         app:layout_constraintStart_toEndOf="@+id/lStreetInput"
         app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
 
@@ -139,11 +118,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
-        android:layout_marginBottom="34dp"
         android:ems="10"
         android:hint="PLZ"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/lEmailInput"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lStreetInput" />
 
@@ -151,16 +128,11 @@
         android:id="@+id/lOrtInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginRight="70dp"
-        android:layout_marginBottom="34dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
         android:ems="10"
         android:hint="Ort"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/lEmailInput"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/lPlzInput"
         app:layout_constraintTop_toBottomOf="@+id/lStreetInput" />
 
@@ -168,14 +140,12 @@
         android:id="@+id/lLevelInput"
         android:layout_width="60sp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginBottom="510dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="127dp"
         android:ems="10"
         android:hint="Etage"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/lHnrInput"
         app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
 
@@ -186,12 +156,9 @@
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="34dp"
-        android:layout_marginEnd="143dp"
-        android:layout_marginRight="143dp"
         android:ems="10"
         android:hint="Email (Emanuel@gmx.de)"
         android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lPlzInput" />
 
@@ -202,11 +169,7 @@
         android:layout_marginStart="17dp"
         android:layout_marginLeft="17dp"
         android:layout_marginTop="23dp"
-        android:layout_marginEnd="303dp"
-        android:layout_marginRight="303dp"
         android:text="Anmerkungen:"
-        app:layout_constraintBottom_toTopOf="@+id/lAnmerkungInput"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lEmailInput" />
 
@@ -216,12 +179,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
         android:layout_marginLeft="19dp"
-        android:layout_marginEnd="182dp"
-        android:layout_marginRight="182dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewAnmerkungen" />
 

@@ -63,28 +63,25 @@
         android:id="@+id/pHNrInput"
         android:layout_width="100sp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginRight="55dp"
-        android:layout_marginBottom="1dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="141dp"
         android:ems="10"
         android:hint="HNr"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/pCityInput"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/pStreetInput" />
+        app:layout_constraintStart_toEndOf="@+id/pStreetInput"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
 
     <EditText
         android:id="@+id/pCityInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="55dp"
-        android:layout_marginRight="55dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
         android:ems="10"
         android:hint="Ort"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pPLZInput"
         app:layout_constraintTop_toBottomOf="@+id/pStreetInput" />
 
     <EditText
@@ -129,6 +126,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:width="220sp"
         android:ems="10"
         android:hint="Email (Emanuel@gmx.de)"
         android:inputType="textEmailAddress"
@@ -142,10 +140,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="42dp"
-        android:layout_marginEnd="119dp"
-        android:layout_marginRight="119dp"
         android:text="Eingabe neuer Benutzername und Passwort:"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pEmailInput" />
 
@@ -198,10 +193,12 @@
         android:id="@+id/acceptButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="186dp"
+        android:layout_marginStart="143dp"
+        android:layout_marginLeft="143dp"
+        android:layout_marginTop="185dp"
         android:onClick="accept"
         android:text="uebernehmen"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/abortButton"
         app:layout_constraintTop_toBottomOf="@+id/textViewNewUserPw" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
