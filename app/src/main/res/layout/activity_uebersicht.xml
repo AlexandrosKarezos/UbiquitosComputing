@@ -8,39 +8,35 @@
 
     <Button
         android:id="@+id/buttonLogin"
-        android:layout_width="117dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:text="Login"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonFeedback"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/menuButton"
-        android:layout_width="86dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Menü"
         android:visibility="visible"
-        app:layout_constraintEnd_toStartOf="@+id/buttonReservation"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonReservation"
-        android:layout_width="94dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Reserv."
         android:visibility="visible"
-        app:layout_constraintEnd_toStartOf="@+id/buttonFeedback"
         app:layout_constraintStart_toEndOf="@+id/menuButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonFeedback"
-        android:layout_width="112dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:text="Feedback"
-        app:layout_constraintEnd_toStartOf="@+id/buttonLogin"
         app:layout_constraintStart_toEndOf="@+id/buttonReservation"
         app:layout_constraintTop_toTopOf="parent" />
 

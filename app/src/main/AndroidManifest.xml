@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PizzaApp">
         <activity android:name=".BestellungsverlaufActivity"/>
-        <activity android:name=".ProfilBearbeitenActivity"/>
         <activity android:name=".BenutzerAngemeldetActivity"/>
         <activity android:name=".RegistrierenActivity" />
         <activity android:name=".BestellenAbholenActivity" />

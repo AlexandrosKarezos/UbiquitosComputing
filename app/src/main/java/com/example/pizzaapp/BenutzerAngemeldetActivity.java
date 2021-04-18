@@ -36,13 +36,18 @@ public class BenutzerAngemeldetActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void orderHistory(View view){
-        Intent intent = new Intent(this, BestellungsverlaufActivity.class);
+    public void abort(View view){
+        Intent intent = new Intent(this, BenutzerAngemeldetActivity.class);
         startActivity(intent);
     }
 
-    public void profile(View view){
-        Intent intent = new Intent(this, ProfilBearbeitenActivity.class);
+    public void accept(View view){
+        Intent intent = new Intent(this, BenutzerAngemeldetActivity.class);
+        startActivity(intent);
+    }
+
+    public void orderHistory(View view){
+        Intent intent = new Intent(this, BestellungsverlaufActivity.class);
         startActivity(intent);
     }
 
