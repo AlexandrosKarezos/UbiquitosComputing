@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PizzaApp</string>
+    <string name="menu_margeritha">\n\tMargeritha\n\t(Tomatensauce, Mozarella, Basilikum)\n</string>
+    <string name="menu_prosciutto">&#160;Prosciutto<br />&#160;(Schinken, Käse)</string>
+    <string name="menu_salami">\n\tSalami\n\t(Salami, Käse)\n</string>
+    <string name="bestellungsverlauf_TabTop">\n\tDatum\t\tBestellung\t\tAnzahl\t\tPreis\n</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
