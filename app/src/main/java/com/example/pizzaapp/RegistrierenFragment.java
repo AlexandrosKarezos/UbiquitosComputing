@@ -70,6 +70,7 @@ public class RegistrierenFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 registerUser();
+                ((MainActivity) getActivity()).setFragment(new LoginFragment());
             }
         });
 
@@ -86,14 +87,34 @@ public class RegistrierenFragment extends Fragment {
         String city = editTextCity.getText().toString().trim();
         String username =editTextUsername.getText().toString().trim();
 
+        if(lastName.isEmpty()){
+            editTextLastName.setError("Last name is required!");
+            editTextLastName.requestFocus();
+            return;
+        }
         if(firstName.isEmpty()){
             editTextFirstName.setError("First name is required!");
             editTextFirstName.requestFocus();
             return;
         }
-        if(lastName.isEmpty()){
-            editTextLastName.setError("Last name is required!");
-            editTextLastName.requestFocus();
+        if(street.isEmpty()){
+            editTextStreet.setError("Street is required!");
+            editTextStreet.requestFocus();
+            return;
+        }
+        if(streetNumber.isEmpty()){
+            editTextStreetNumber.setError("Streetnumber is required!");
+            editTextStreetNumber.requestFocus();
+            return;
+        }
+        if(postCode.isEmpty()){
+            editTextPostCode.setError("Postcode is required!");
+            editTextPostCode.requestFocus();
+            return;
+        }
+        if(city.isEmpty()){
+            editTextCity.setError("City is required!");
+            editTextCity.requestFocus();
             return;
         }
         if(email.isEmpty()){
@@ -102,8 +123,8 @@ public class RegistrierenFragment extends Fragment {
             return;
         }
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            editTextLastName.setError("Please provide valid email!");
-            editTextLastName.requestFocus();
+            editTextEmail.setError("Please provide valid email!");
+            editTextEmail.requestFocus();
             return;
         }
         if(password.isEmpty()){
@@ -121,7 +142,7 @@ public class RegistrierenFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            User user = new User(lastName, firstName,street,streetNumber,postCode,city,email,username);
+                            User user = new User(lastName, firstName,email,postCode,street,streetNumber,city,username);
                             FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
@@ -135,6 +156,5 @@ public class RegistrierenFragment extends Fragment {
                         }
                     }
                 });
-
     }
 }

@@ -48,7 +48,7 @@ public class BenutzerprofilFragment extends Fragment {
         bestellungsVButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                ((MainActivity) getActivity()).setFragment(new BestellungsverlaufFragment());
             }
         });
 

@@ -11,36 +11,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bestellung"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.249"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.119" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewMenge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Menge"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.119" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewPreis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Preis"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.691"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.119" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewGesamt"
@@ -53,18 +47,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.219" />
-
-    <ImageButton
-        android:id="@+id/imageDeletecross"
-        android:layout_width="37dp"
-        android:layout_height="36dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.957"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.158"
-        app:srcCompat="@android:drawable/ic_delete" />
 
     <View
         android:id="@+id/dividerBestelluebersicht"
@@ -143,12 +125,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="11dp"
         android:layout_marginLeft="11dp"
-        android:layout_marginTop="132dp"
         android:ems="10"
         android:hint="HNr"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/baStreet"
-        app:layout_constraintTop_toBottomOf="@+id/divider7" />
+        app:layout_constraintBottom_toTopOf="@+id/baOrt"
+        app:layout_constraintStart_toEndOf="@+id/baStreet" />
 
     <EditText
         android:id="@+id/baPlz"
@@ -224,33 +205,28 @@
         android:id="@+id/returnButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
-        android:onClick="back"
+        android:layout_marginBottom="4dp"
         android:text="zurueck"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewBABezahlen" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/abortButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
-        android:onClick="abort"
+        android:layout_marginBottom="4dp"
         android:text="abbrechen"
-        app:layout_constraintStart_toEndOf="@+id/returnButton"
-        app:layout_constraintTop_toBottomOf="@+id/radioButtonBAPayPal" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/kpBestellenButton"
+        app:layout_constraintStart_toEndOf="@+id/returnButton" />
 
     <Button
         android:id="@+id/kpBestellenButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginLeft="14dp"
-        android:layout_marginTop="108dp"
-        android:onClick="buy"
         android:text="Kostenpflichtig\nbestellen"
-        app:layout_constraintStart_toEndOf="@+id/abortButton"
-        app:layout_constraintTop_toBottomOf="@+id/radioButtonBAPayPal" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <RadioButton
         android:id="@+id/radioButtonBAKreditkarte"
@@ -262,5 +238,18 @@
         android:text="Kreditkarte"
         app:layout_constraintStart_toEndOf="@+id/radioButtonBAPayPal"
         app:layout_constraintTop_toBottomOf="@+id/baOrt" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/dividerBestelluebersicht"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMenge"
+        tools:layout_editor_absoluteX="190dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

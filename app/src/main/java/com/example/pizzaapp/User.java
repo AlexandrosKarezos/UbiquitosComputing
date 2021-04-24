@@ -5,7 +5,7 @@ public class User {
     public User(){
 
     }
-   public User(String firstName, String lastName, String email, String postCode, String street, String streetNumber, String city, String username){
+    public User(String lastName, String firstName, String email, String postCode, String street, String streetNumber, String city, String username){
         this.firstName=firstName;
         this.lastName=lastName;
         this.email=email;
@@ -14,5 +14,5 @@ public class User {
         this.streetNumber=streetNumber;
         this.city=city;
         this.username=username;
-   }
+    }
 }
