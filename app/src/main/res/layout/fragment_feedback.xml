@@ -13,6 +13,8 @@
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="118dp"
+        android:stepSize="0.5"
+        android:numStars="5"
         app:layout_constraintStart_toEndOf="@+id/textViewSatisfaction"
         app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
 

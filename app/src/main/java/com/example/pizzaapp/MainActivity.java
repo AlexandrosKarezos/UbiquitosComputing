@@ -12,11 +12,14 @@ import android.text.Layout;
 import android.view.View;
 import android.widget.DatePicker;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.text.DateFormat;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
-
+    private FirebaseUser user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +48,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void login(View view){
-        setFragment(new LoginFragment());
+
+        if(FirebaseAuth.getInstance().getCurrentUser()!=null)
+        {
+            setFragment(new BenutzerprofilFragment());
+        }
+        else{
+            setFragment(new LoginFragment());
+        }
+
+
     }
 }
