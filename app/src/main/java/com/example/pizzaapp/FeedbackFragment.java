@@ -42,10 +42,19 @@ public class FeedbackFragment extends Fragment {
         abortButton = view.findViewById(R.id.abortButton);
         submitFbButton = view.findViewById(R.id.submitFBButton);
 
+        submitFbButton.setEnabled(false);
+
         abortButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ((MainActivity) getActivity()).setFragment(new StartFragment());
+            }
+        });
+
+        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                submitFbButton.setEnabled(true);
             }
         });
 

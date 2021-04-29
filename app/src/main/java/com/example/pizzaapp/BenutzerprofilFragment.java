@@ -59,6 +59,9 @@ public class BenutzerprofilFragment extends Fragment {
         emailEditText=(EditText)view.findViewById(R.id.pEmailInput);
         usernameEditText=(EditText)view.findViewById(R.id.pNewUserInput);
         aSwitch= (Switch)view.findViewById(R.id.switchProfilBearb);
+
+        acceptButton.setEnabled(false);
+
         abortButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,7 +105,7 @@ public class BenutzerprofilFragment extends Fragment {
                     postcodeEditText.setEnabled(true);
                     emailEditText.setEnabled(true);
                     usernameEditText.setEnabled(true);
-
+                    acceptButton.setEnabled(true);
                 }
                 if(!isChecked)
                 {
@@ -114,6 +117,7 @@ public class BenutzerprofilFragment extends Fragment {
                     postcodeEditText.setEnabled(false);
                     emailEditText.setEnabled(false);
                     usernameEditText.setEnabled(false);
+                    acceptButton.setEnabled(false);
                 }
             }
         });

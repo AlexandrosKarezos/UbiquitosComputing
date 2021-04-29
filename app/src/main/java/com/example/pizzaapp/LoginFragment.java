@@ -7,6 +7,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,11 +40,16 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        loginButton = view.findViewById(R.id.buttonlLogin);
-        registerButton = view.findViewById(R.id.buttonlRegister);
-        editTextEmail=(EditText) view.findViewById(R.id.emailLogin);
-        editTextPassword=(EditText) view.findViewById(R.id.lPasswordInput);
+        loginButton = (Button) view.findViewById(R.id.buttonlLogin);
+        registerButton = (Button) view.findViewById(R.id.buttonlRegister);
+        editTextEmail = (EditText) view.findViewById(R.id.emailLogin);
+        editTextPassword = (EditText) view.findViewById(R.id.lPasswordInput);
         mAuth= FirebaseAuth.getInstance();
+
+        loginButton.setEnabled(false);
+
+        addLoginETChange(editTextEmail);
+        addLoginETChange(editTextPassword);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +93,30 @@ public class LoginFragment extends Fragment {
                 }else{
                     Toast.makeText(getActivity(),"Failed to login! Please check your credentials",Toast.LENGTH_LONG).show();
 
+                }
+            }
+        });
+    }
+
+    public void addLoginETChange(EditText editText){
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String email = editTextEmail.getText().toString();
+                String passwort = editTextPassword.getText().toString();
+
+                if(!(passwort.isEmpty() || email.isEmpty())){
+                    loginButton.setEnabled(true);
                 }
             }
         });

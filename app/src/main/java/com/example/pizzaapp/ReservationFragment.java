@@ -10,11 +10,14 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -32,8 +35,9 @@ public class ReservationFragment extends Fragment{
     NumberPicker numberPicker;
     Button dateButton;
     Button timeButton;
-    Button bookButton;
+    Button reservierenButton;
     Button abortButton;
+    EditText surnameET, nameET, emailET;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,14 +56,24 @@ public class ReservationFragment extends Fragment{
         timeButton = view.findViewById(R.id.timeButton);
         numberPicker = view.findViewById(R.id.numberPicker);
         resDateTV = view.findViewById(R.id.textViewResDate);
-        bookButton = view.findViewById(R.id.buttonReservieren);
+        reservierenButton = view.findViewById(R.id.buttonReservieren);
         abortButton = view.findViewById(R.id.abortButton);
+        surnameET = view.findViewById(R.id.ResSurname);
+        nameET = view.findViewById(R.id.resNameInput);
+        emailET = view.findViewById(R.id.resEmailInput);
+
+        addReservationETChange(surnameET);
+        addReservationETChange(nameET);
+        addReservationETChange(emailET);
+
+        reservierenButton.setEnabled(false);
 
         dateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DialogFragment datePicker = new DatePickerFragment();
                 datePicker.show(getFragmentManager(), "date picker");
+                testReservation();
             }
         });
 
@@ -70,8 +84,11 @@ public class ReservationFragment extends Fragment{
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
                 anzPersTV.setText("Anzahl Personen: " + newVal);
+                testReservation();
             }
         });
+
+
 
         timeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,10 +105,11 @@ public class ReservationFragment extends Fragment{
                 TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(), style, onTimeSetListener, hour, minute, true);
                 timePickerDialog.setTitle("Uhrzeit waehlen");
                 timePickerDialog.show();
+                testReservation();
             }
         });
 
-        bookButton.setOnClickListener(new View.OnClickListener() {
+        reservierenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((MainActivity) getActivity()).setFragment(new StartFragment());
@@ -102,6 +120,40 @@ public class ReservationFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 ((MainActivity) getActivity()).setFragment(new StartFragment());
+            }
+        });
+
+
+    }
+
+    public void testReservation(){
+        String anzPers = anzPersTV.getText().toString();
+        String resTime = resTimeTV.getText().toString();
+        String resDate = resDateTV.getText().toString();
+        String surname = surnameET.getText().toString();
+        String name = nameET.getText().toString();
+        String email = emailET.getText().toString();
+
+        if(!(anzPers.isEmpty() || resTime.isEmpty() || resDate.isEmpty() || surname.isEmpty() || name.isEmpty() || email.isEmpty())){
+            reservierenButton.setEnabled(true);
+        }
+    }
+
+    public void addReservationETChange(EditText editText){
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                testReservation();
             }
         });
     }

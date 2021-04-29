@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,6 +53,18 @@ public class RegistrierenFragment extends Fragment {
         editTextPassword= (EditText) view.findViewById(R.id.rPasswordInput);
         editTextUsername= (EditText) view.findViewById(R.id.rUsernameInput);
         editTextEmail= (EditText) view.findViewById(R.id.rEmailInput);
+
+        registerButton.setEnabled(false);
+
+        addRegisterETChange(editTextLastName);
+        addRegisterETChange(editTextFirstName);
+        addRegisterETChange(editTextStreet);
+        addRegisterETChange(editTextPostCode);
+        addRegisterETChange(editTextStreetNumber);
+        addRegisterETChange(editTextCity);
+        addRegisterETChange(editTextPassword);
+        addRegisterETChange(editTextUsername);
+        addRegisterETChange(editTextEmail);
 
         abortButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -156,5 +170,39 @@ public class RegistrierenFragment extends Fragment {
                         }
                     }
                 });
+    }
+
+    public void addRegisterETChange(EditText editText){
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String lastname = editTextLastName.getText().toString().trim();
+                String firstname = editTextFirstName.getText().toString().trim();
+                String street = editTextStreet.getText().toString().trim();
+                String postcode = editTextPostCode.getText().toString().trim();
+                String streetnr = editTextStreetNumber.getText().toString().trim();
+                String city = editTextCity.getText().toString().trim();
+                String password = editTextPassword.getText().toString().trim();
+                String username = editTextUsername.getText().toString().trim();
+                String email = editTextEmail.getText().toString().trim();
+
+                if(!(lastname.isEmpty() || firstname.isEmpty() || street.isEmpty() || postcode.isEmpty() || streetnr.isEmpty() || city.isEmpty() || username.isEmpty() || password.isEmpty() || email.isEmpty())){
+                    registerButton.setEnabled(true);
+                }
+                else{
+                    registerButton.setEnabled(false);
+                }
+            }
+        });
     }
 }
