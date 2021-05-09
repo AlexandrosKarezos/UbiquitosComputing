@@ -8,6 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,11 +19,15 @@ import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class MenueFragment extends Fragment {
 
     View view;
-    TextView margerithaTv;
     Button bestellButton;
+    RecyclerView recview;
+    myadapter adapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,9 +43,18 @@ public class MenueFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.menu_linear_layout);
-        bestellButton = view.findViewById(R.id.buttonBestellung);
+        recview=(RecyclerView)view.findViewById(R.id.recview);
+        recview.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
+        FirebaseRecyclerOptions<Meal> options =
+                new FirebaseRecyclerOptions.Builder<Meal>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Meal"), Meal.class)
+                        .build();
+
+        adapter=new myadapter(options);
+        recview.setAdapter(adapter);
+
+        bestellButton = view.findViewById(R.id.buttonBestellung);
         bestellButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,32 +62,6 @@ public class MenueFragment extends Fragment {
             }
         });
 
-        margerithaTv = new TextView(getActivity());
-        margerithaTv.setText(getResources().getString(R.string.menu_margeritha));
-        margerithaTv.setId(margerithaTv.generateViewId());
-        margerithaTv.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        margerithaTv.setClickable(true);
-        margerithaTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                menuAuswahl(view);
-            }
-        });
-
-        TextView salamiTv = new TextView(getActivity());
-        salamiTv.setText(getResources().getString(R.string.menu_salami));
-        salamiTv.setId(salamiTv.generateViewId());
-        salamiTv.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        salamiTv.setClickable(true);
-        salamiTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                menuAuswahl(view);
-            }
-        });
-
-        linearLayout.addView(margerithaTv);
-        linearLayout.addView(salamiTv);
 
         CheckBox vegetarischCB = (CheckBox) view.findViewById(R.id.checkBoxVegetarisch);
         vegetarischCB.setOnClickListener(new View.OnClickListener() {
@@ -101,5 +90,17 @@ public class MenueFragment extends Fragment {
         fragment.setArguments(bundle);
 
         ((MainActivity) getActivity()).setFragment(fragment);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        adapter.stopListening();
     }
 }

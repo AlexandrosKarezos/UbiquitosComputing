@@ -6,6 +6,256 @@
     android:layout_height="match_parent"
     tools:context=".BestellenLiefernFragment">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/abortButton"
+        app:layout_constraintTop_toBottomOf="@+id/divider6">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textViewCreditCardBL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="43dp"
+                android:text="Kreditkartendaten:"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewBezahlVorgang" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup2"
+                android:layout_width="277dp"
+                android:layout_height="62dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textViewBezahlVorgang"
+                app:layout_constraintTop_toBottomOf="@+id/blEmail">
+
+                <RadioButton
+                    android:id="@+id/radioButtonBargeld"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:text="Bargeld"
+                    app:layout_constraintStart_toEndOf="@+id/textViewBezahlVorgang"
+                    app:layout_constraintTop_toBottomOf="@+id/blEmail" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonKreditkarte"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="0dp"
+                    android:text="Kreditkarte"
+                    app:layout_constraintStart_toEndOf="@+id/radioButtonPayPal"
+                    app:layout_constraintTop_toBottomOf="@+id/blOrt" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonPayPal"
+                    android:layout_width="86dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="0dp"
+                    android:text="PayPal"
+                    app:layout_constraintStart_toEndOf="@+id/radioButtonBargeld"
+                    app:layout_constraintTop_toBottomOf="@+id/blEmail" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textViewBAKontaktAdr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:text="Lieferadresse:"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/baSurname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:ems="10"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewBAKontaktAdr" />
+
+            <EditText
+                android:id="@+id/blStreet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:ems="10"
+                android:hint="Strasse"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/blName" />
+
+            <EditText
+                android:id="@+id/blHnr"
+                android:layout_width="100sp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="HNr"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toTopOf="@+id/blOrt"
+                app:layout_constraintStart_toEndOf="@+id/blStreet" />
+
+            <EditText
+                android:id="@+id/blLevel"
+                android:layout_width="60sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="108dp"
+                android:ems="10"
+                android:hint="Etage"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toEndOf="@+id/blHnr"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/blName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:ems="10"
+                android:hint="Vorname"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/baSurname" />
+
+            <EditText
+                android:id="@+id/blPlz"
+                android:layout_width="100sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:ems="10"
+                android:hint="PLZ"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/blStreet" />
+
+            <EditText
+                android:id="@+id/blOrt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="9dp"
+                android:layout_marginLeft="9dp"
+                android:ems="10"
+                android:hint="Ort"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toEndOf="@+id/blPlz"
+                app:layout_constraintTop_toBottomOf="@+id/blStreet" />
+
+            <EditText
+                android:id="@+id/blEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:width="220sp"
+                android:ems="10"
+                android:hint="Email (Emanuel@gmx.de)"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/blPlz" />
+
+            <TextView
+                android:id="@+id/textViewAnmerkung"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="120dp"
+                android:text="Anmerkungen:"
+                app:layout_constraintBottom_toTopOf="@+id/blAnmerkung"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewCreditCardBL" />
+
+            <EditText
+                android:id="@+id/blAnmerkung"
+                android:layout_width="202dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewBezahlVorgang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp"
+                android:text="Bezahlvorgang:"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/blEmail" />
+
+            <EditText
+                android:id="@+id/editTextCreditCardNoBL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Kreditkartennummer"
+                android:inputType="number"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.517"
+                app:layout_constraintStart_toEndOf="@+id/textViewCreditCardBL"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+
+            <EditText
+                android:id="@+id/editTextExpireDateBL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Gültig bis"
+                android:inputType="date"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.835"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextCreditCardNoBL" />
+
+            <EditText
+                android:id="@+id/editTextCVVBL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="CVV"
+                android:inputType="number"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.835"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextExpireDateBL" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
     <TextView
         android:id="@+id/textViewBestellung"
         android:layout_width="wrap_content"
@@ -65,190 +315,10 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="9dp"
-        android:layout_marginBottom="11dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toTopOf="@+id/textViewBAKontaktAdr"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewGesamt" />
-
-    <TextView
-        android:id="@+id/textViewBAKontaktAdr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="11dp"
-        android:text="Lieferadresse:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider6" />
-
-    <EditText
-        android:id="@+id/baSurname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:ems="10"
-        android:hint="Name"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewBAKontaktAdr" />
-
-    <EditText
-        android:id="@+id/blStreet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:ems="10"
-        android:hint="Strasse"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/blName" />
-
-    <EditText
-        android:id="@+id/blHnr"
-        android:layout_width="100sp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
-        android:layout_marginLeft="9dp"
-        android:layout_marginTop="122dp"
-        android:ems="10"
-        android:hint="HNr"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/blStreet"
-        app:layout_constraintTop_toBottomOf="@+id/divider6" />
-
-    <EditText
-        android:id="@+id/blLevel"
-        android:layout_width="60sp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
-        android:layout_marginLeft="9dp"
-        android:layout_marginTop="122dp"
-        android:ems="10"
-        android:hint="Etage"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/blHnr"
-        app:layout_constraintTop_toBottomOf="@+id/divider6" />
-
-    <EditText
-        android:id="@+id/blName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:ems="10"
-        android:hint="Vorname"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/baSurname" />
-
-    <EditText
-        android:id="@+id/blPlz"
-        android:layout_width="100sp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:ems="10"
-        android:hint="PLZ"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/blStreet" />
-
-    <EditText
-        android:id="@+id/blOrt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
-        android:layout_marginLeft="9dp"
-        android:ems="10"
-        android:hint="Ort"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/blPlz"
-        app:layout_constraintTop_toBottomOf="@+id/blStreet" />
-
-    <EditText
-        android:id="@+id/blEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:width="220sp"
-        android:ems="10"
-        android:hint="Email (Emanuel@gmx.de)"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/blPlz" />
-
-    <TextView
-        android:id="@+id/textViewAnmerkung"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="26dp"
-        android:text="Anmerkungen:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewBezahlVorgang" />
-
-    <EditText
-        android:id="@+id/blAnmerkung"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="1dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAnmerkung" />
-
-    <TextView
-        android:id="@+id/textViewBezahlVorgang"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="17dp"
-        android:text="Bezahlvorgang:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/blEmail" />
-
-    <RadioButton
-        android:id="@+id/radioButtonBargeld"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="4dp"
-        android:text="Bargeld"
-        app:layout_constraintStart_toEndOf="@+id/textViewBezahlVorgang"
-        app:layout_constraintTop_toBottomOf="@+id/blEmail" />
-
-    <RadioButton
-        android:id="@+id/radioButtonPayPal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="4dp"
-        android:text="PayPal"
-        app:layout_constraintStart_toEndOf="@+id/radioButtonBargeld"
-        app:layout_constraintTop_toBottomOf="@+id/blEmail" />
-
-    <RadioButton
-        android:id="@+id/radioButtonKreditkarte"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="49dp"
-        android:text="Kreditkarte"
-        app:layout_constraintStart_toEndOf="@+id/radioButtonPayPal"
-        app:layout_constraintTop_toBottomOf="@+id/blOrt" />
 
     <Button
         android:id="@+id/returnButton"

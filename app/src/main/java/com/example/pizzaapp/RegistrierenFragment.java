@@ -84,7 +84,6 @@ public class RegistrierenFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 registerUser();
-                ((MainActivity) getActivity()).setFragment(new LoginFragment());
             }
         });
 
@@ -162,6 +161,7 @@ public class RegistrierenFragment extends Fragment {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
                                         Toast.makeText(getActivity(),"User has been registered sucessfully!",Toast.LENGTH_LONG).show();
+                                        ((MainActivity) getActivity()).setFragment(new LoginFragment());
                                     }else{
                                         Toast.makeText(getActivity(),"Failed to register User! Try again!",Toast.LENGTH_LONG).show();
                                     }

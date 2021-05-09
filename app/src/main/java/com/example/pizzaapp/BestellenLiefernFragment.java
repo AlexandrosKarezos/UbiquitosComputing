@@ -10,10 +10,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.TextView;
 
-public class BestellenLiefernFragment extends Fragment {
+public class BestellenLiefernFragment extends Fragment implements View.OnClickListener{
 
-    Button returnButton, abortButton, kpBestellenButton;
+    private Button returnButton, abortButton, kpBestellenButton;
+    private TextView creditCardDataTV;
+    private EditText creditCardNoET, expireDateET, cvvET;
+    private RadioButton radioButtonCreditCard, radioButtonCash, radioButtonPaypal;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,26 +35,53 @@ public class BestellenLiefernFragment extends Fragment {
         returnButton = (Button) view.findViewById(R.id.returnButton);
         abortButton = (Button) view.findViewById(R.id.abortButton);
         kpBestellenButton = (Button) view.findViewById(R.id.kpBestellenButton);
+        creditCardDataTV = (TextView) view.findViewById(R.id.textViewCreditCardBL);
+        creditCardNoET = (EditText) view.findViewById(R.id.editTextCreditCardNoBL);
+        expireDateET = (EditText) view.findViewById(R.id.editTextExpireDateBL);
+        cvvET = (EditText) view.findViewById(R.id.editTextCVVBL);
+        radioButtonCreditCard = (RadioButton) view.findViewById(R.id.radioButtonKreditkarte);
+        radioButtonCash = (RadioButton) view.findViewById(R.id.radioButtonBargeld);
+        radioButtonPaypal = (RadioButton) view.findViewById(R.id.radioButtonPayPal);
 
-        returnButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        returnButton.setOnClickListener(this);
+        abortButton.setOnClickListener(this);
+        kpBestellenButton.setOnClickListener(this);
+        radioButtonCreditCard.setOnClickListener(this);
+        radioButtonCash.setOnClickListener(this);
+        radioButtonPaypal.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.returnButton:
                 ((MainActivity) getActivity()).setFragment(new LiefernFragment());
-            }
-        });
-
-        abortButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+            case R.id.abortButton:
                 ((MainActivity) getActivity()).setFragment(new StartFragment());
-            }
-        });
-
-        kpBestellenButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //wenn etwas gekauft wird
-            }
-        });
+                break;
+            case R.id.kpBestellenButton:
+                // do your code
+                break;
+            case R.id.radioButtonKreditkarte:
+                if(radioButtonCreditCard.isChecked()){
+                    creditCardDataTV.setVisibility(View.VISIBLE);
+                    creditCardNoET.setVisibility(View.VISIBLE);
+                    expireDateET.setVisibility(View.VISIBLE);
+                    cvvET.setVisibility(View.VISIBLE);
+                }
+                break;
+            case R.id.radioButtonBargeld:
+            case R.id.radioButtonPayPal:
+                if(radioButtonCash.isChecked() || radioButtonPaypal.isChecked()){
+                    creditCardDataTV.setVisibility(View.GONE);
+                    creditCardNoET.setVisibility(View.GONE);
+                    expireDateET.setVisibility(View.GONE);
+                    cvvET.setVisibility(View.GONE);
+                }
+                break;
+            default:
+                break;
+        }
     }
 }

@@ -118,6 +118,9 @@ public class LoginFragment extends Fragment {
                 if(!(passwort.isEmpty() || email.isEmpty())){
                     loginButton.setEnabled(true);
                 }
+                else{
+                    loginButton.setEnabled(false);
+                }
             }
         });
     }

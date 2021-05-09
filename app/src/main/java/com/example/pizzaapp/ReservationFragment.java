@@ -137,6 +137,9 @@ public class ReservationFragment extends Fragment{
         if(!(anzPers.isEmpty() || resTime.isEmpty() || resDate.isEmpty() || surname.isEmpty() || name.isEmpty() || email.isEmpty())){
             reservierenButton.setEnabled(true);
         }
+        else{
+            reservierenButton.setEnabled(false);
+        }
     }
 
     public void addReservationETChange(EditText editText){
