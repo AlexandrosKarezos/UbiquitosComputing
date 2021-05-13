@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="5dp"
+    android:clickable="true"
     android:elevation="5dp"
+    app:cardCornerRadius="5dp"
     app:cardUseCompatPadding="true">
 
     <RelativeLayout
@@ -13,48 +14,47 @@
         android:padding="15dp">
 
 
-
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/nametext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:text="NAME:"
-            android:textStyle="bold"
-            android:textSize="25sp"
             android:textColor="#000"
+            android:textSize="25sp"
 
-            android:layout_marginLeft="10dp"/>
+            android:textStyle="bold" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/pricetext"
-            android:text="PRICE:"
-            android:textSize="25sp"
-            android:textColor="#000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@id/nametext"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp"
+            android:text="PRICE:"
+            android:textColor="#000"
+            android:textSize="25sp" />
 
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/toppingtext"
-            android:text="TOPPING:"
-            android:textSize="25sp"
-            android:textColor="#000"
-            android:layout_below="@id/pricetext"
-            android:layout_marginLeft="10dp"/>
-
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/vegtext"
-            android:text="VEG:"
-            android:textSize="25sp"
+            android:layout_below="@id/pricetext"
+            android:layout_marginLeft="10dp"
+            android:text="TOPPING:"
             android:textColor="#000"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/vegtext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@id/toppingtext"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp"
+            android:text="VEG:"
+            android:textColor="#000"
+            android:textSize="25sp" />
 
 
     </RelativeLayout>

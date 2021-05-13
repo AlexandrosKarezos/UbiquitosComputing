@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +24,7 @@ public class BestellenAbholenFragment extends Fragment implements View.OnClickLi
     TextView creditCardDataTV;
     EditText creditCardNoET, expireDateET, cvvET;
     RadioButton radioButtonBACreditCard, radioButtonBACash, radioButtonBAPaypal;
+    private EditText surnameET, nameET, streetET, hNrET, plzET, cityET, emailET;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,6 +48,24 @@ public class BestellenAbholenFragment extends Fragment implements View.OnClickLi
         radioButtonBACreditCard = (RadioButton) view.findViewById(R.id.radioButtonBAKreditkarte);
         radioButtonBACash = (RadioButton) view.findViewById(R.id.radioButtonBABargeld);
         radioButtonBAPaypal = (RadioButton) view.findViewById(R.id.radioButtonBAPayPal);
+
+        surnameET = (EditText) view.findViewById(R.id.baSurname);
+        nameET = (EditText) view.findViewById(R.id.baName);
+        streetET = (EditText) view.findViewById(R.id.baStreet);
+        hNrET = (EditText) view.findViewById(R.id.baHNr);
+        plzET = (EditText) view.findViewById(R.id.baPlz);
+        cityET = (EditText) view.findViewById(R.id.baOrt);
+        emailET = (EditText) view.findViewById(R.id.baEmail);
+
+        kpBestellenButton.setEnabled(false);
+
+        addPickupBuyETChange(surnameET);
+        addPickupBuyETChange(nameET);
+        addPickupBuyETChange(streetET);
+        addPickupBuyETChange(hNrET);
+        addPickupBuyETChange(plzET);
+        addPickupBuyETChange(cityET);
+        addPickupBuyETChange(emailET);
 
         returnButton.setOnClickListener(this);
         abortButton.setOnClickListener(this);
@@ -86,5 +107,42 @@ public class BestellenAbholenFragment extends Fragment implements View.OnClickLi
             default:
                 break;
         }
+    }
+
+    public void testPickupBuy(){
+        String surname = surnameET.getText().toString();
+        String name = nameET.getText().toString();
+        String street = streetET.getText().toString();
+        String hNr = hNrET.getText().toString();
+        String plz = plzET.getText().toString();
+        String city = cityET.getText().toString();
+        String email = emailET.getText().toString();
+
+        if(!(surname.isEmpty() || name.isEmpty() || street.isEmpty() || hNr.isEmpty() || plz.isEmpty() || city.isEmpty() || email.isEmpty())){
+            kpBestellenButton.setEnabled(true);
+        }
+        else{
+            kpBestellenButton.setEnabled(false);
+        }
+    }
+
+    public void addPickupBuyETChange(EditText editText){
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                testPickupBuy();
+            }
+        });
     }
 }

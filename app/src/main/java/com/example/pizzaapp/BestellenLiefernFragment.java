@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +22,7 @@ public class BestellenLiefernFragment extends Fragment implements View.OnClickLi
     private TextView creditCardDataTV;
     private EditText creditCardNoET, expireDateET, cvvET;
     private RadioButton radioButtonCreditCard, radioButtonCash, radioButtonPaypal;
+    private EditText surnameET, nameET, streetET, hNrET, plzET, cityET, emailET;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,6 +45,23 @@ public class BestellenLiefernFragment extends Fragment implements View.OnClickLi
         radioButtonCreditCard = (RadioButton) view.findViewById(R.id.radioButtonKreditkarte);
         radioButtonCash = (RadioButton) view.findViewById(R.id.radioButtonBargeld);
         radioButtonPaypal = (RadioButton) view.findViewById(R.id.radioButtonPayPal);
+        surnameET = (EditText) view.findViewById(R.id.blSurname);
+        nameET = (EditText) view.findViewById(R.id.blName);
+        streetET = (EditText) view.findViewById(R.id.blStreet);
+        hNrET = (EditText) view.findViewById(R.id.blHnr);
+        plzET = (EditText) view.findViewById(R.id.blPlz);
+        cityET = (EditText) view.findViewById(R.id.blOrt);
+        emailET = (EditText) view.findViewById(R.id.blEmail);
+
+        kpBestellenButton.setEnabled(false);
+
+        addDeliveryBuyETChange(surnameET);
+        addDeliveryBuyETChange(nameET);
+        addDeliveryBuyETChange(streetET);
+        addDeliveryBuyETChange(hNrET);
+        addDeliveryBuyETChange(plzET);
+        addDeliveryBuyETChange(cityET);
+        addDeliveryBuyETChange(emailET);
 
         returnButton.setOnClickListener(this);
         abortButton.setOnClickListener(this);
@@ -49,6 +69,7 @@ public class BestellenLiefernFragment extends Fragment implements View.OnClickLi
         radioButtonCreditCard.setOnClickListener(this);
         radioButtonCash.setOnClickListener(this);
         radioButtonPaypal.setOnClickListener(this);
+
     }
 
     @Override
@@ -83,5 +104,42 @@ public class BestellenLiefernFragment extends Fragment implements View.OnClickLi
             default:
                 break;
         }
+    }
+
+    public void testDeliveryBuy(){
+        String surname = surnameET.getText().toString();
+        String name = nameET.getText().toString();
+        String street = streetET.getText().toString();
+        String hNr = hNrET.getText().toString();
+        String plz = plzET.getText().toString();
+        String city = cityET.getText().toString();
+        String email = emailET.getText().toString();
+
+        if(!(surname.isEmpty() || name.isEmpty() || street.isEmpty() || hNr.isEmpty() || plz.isEmpty() || city.isEmpty() || email.isEmpty())){
+            kpBestellenButton.setEnabled(true);
+        }
+        else{
+            kpBestellenButton.setEnabled(false);
+        }
+    }
+
+    public void addDeliveryBuyETChange(EditText editText){
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                testDeliveryBuy();
+            }
+        });
     }
 }

@@ -62,7 +62,7 @@
         android:width="100sp"
         android:ems="10"
         android:hint="HNr"
-        android:inputType="number"
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/cityInput"
         app:layout_constraintStart_toEndOf="@+id/streetInput" />
 

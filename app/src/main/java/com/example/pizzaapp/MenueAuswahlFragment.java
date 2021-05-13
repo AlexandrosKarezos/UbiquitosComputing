@@ -18,9 +18,11 @@ public class MenueAuswahlFragment extends Fragment {
     Button bestaetigenButton;
     Button abortButton;
     TextView pizzaTV;
-    String myString;
+    private String itemName;
+    private double itemPrice;
     NumberPicker numberPicker;
     TextView auswahlTV;
+    private ShoppingCart shopcart;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,6 +36,8 @@ public class MenueAuswahlFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        shopcart = new ShoppingCart();
 
         bestaetigenButton = view.findViewById(R.id.buttonBestaetigen);
         abortButton = view.findViewById(R.id.abortButton);
@@ -53,14 +57,16 @@ public class MenueAuswahlFragment extends Fragment {
 
         Bundle bundle = this.getArguments();
         if (bundle != null) {
-            myString = bundle.getString("pizza", "Pizza");
+            itemName = bundle.getString("pizza", "Pizza");
+            itemPrice = bundle.getDouble("price");
         }
 
-        pizzaTV.setText(myString);
+        pizzaTV.setText(itemName);
 
         bestaetigenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                shopcart.addItem(new ShoppingCartItem(itemName, itemPrice, numberPicker.getValue()));
                 ((MainActivity) getActivity()).setFragment(new MenueFragment());
             }
         });

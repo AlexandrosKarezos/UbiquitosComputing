@@ -85,7 +85,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/baSurname"
+                android:id="@+id/blSurname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -141,7 +141,7 @@
                 android:hint="Vorname"
                 android:inputType="textPersonName"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/baSurname" />
+                app:layout_constraintTop_toBottomOf="@+id/blSurname" />
 
             <EditText
                 android:id="@+id/blPlz"

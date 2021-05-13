@@ -20,14 +20,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.firebase.ui.database.ObservableSnapshotArray;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class MenueFragment extends Fragment {
+public class MenueFragment extends Fragment implements myadapter.OnCardListener {
 
     View view;
     Button bestellButton;
     RecyclerView recview;
     myadapter adapter;
+    FirebaseRecyclerOptions<Meal> options;
+    private ObservableSnapshotArray<Meal> mMeals;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,12 +49,13 @@ public class MenueFragment extends Fragment {
         recview=(RecyclerView)view.findViewById(R.id.recview);
         recview.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
-        FirebaseRecyclerOptions<Meal> options =
-                new FirebaseRecyclerOptions.Builder<Meal>()
+        options = new FirebaseRecyclerOptions.Builder<Meal>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Meal"), Meal.class)
                         .build();
 
-        adapter=new myadapter(options);
+        mMeals = options.getSnapshots();
+
+        adapter=new myadapter(options, this);
         recview.setAdapter(adapter);
 
         bestellButton = view.findViewById(R.id.buttonBestellung);
@@ -70,26 +74,21 @@ public class MenueFragment extends Fragment {
             public void onClick(View v) {
                 //is checkbox checked?
                 if (((CheckBox) v).isChecked()) {
-                    //Case 1
+                    options = new FirebaseRecyclerOptions.Builder<Meal>()
+                            .setQuery(FirebaseDatabase.getInstance().getReference().child("Meal").orderByChild("veg").equalTo(true), Meal.class)
+                            .build();
+                    mMeals = options.getSnapshots();
+                    adapter.updateOptions(options);
                 }
                 else{
-                    //Case 2
+                    options = new FirebaseRecyclerOptions.Builder<Meal>()
+                            .setQuery(FirebaseDatabase.getInstance().getReference().child("Meal"), Meal.class)
+                            .build();
+                    mMeals = options.getSnapshots();
+                    adapter.updateOptions(options);
                 }
             }
         });
-    }
-
-    public void menuAuswahl(View view){
-        TextView test = (TextView) view;
-        String name = test.getText().toString();
-        String[] lines = name.split( "\n\t" );
-
-        Fragment fragment = new MenueAuswahlFragment();
-        Bundle bundle = new Bundle();
-        bundle.putString("pizza", lines[1]);
-        fragment.setArguments(bundle);
-
-        ((MainActivity) getActivity()).setFragment(fragment);
     }
 
     @Override
@@ -102,5 +101,16 @@ public class MenueFragment extends Fragment {
     public void onStop() {
         super.onStop();
         adapter.stopListening();
+    }
+
+    @Override
+    public void onCardClick(int position) {
+
+        Fragment fragment = new MenueAuswahlFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("pizza", mMeals.get(position).getName());
+        bundle.putDouble("price", mMeals.get(position).getPrice());
+        fragment.setArguments(bundle);
+        ((MainActivity) getActivity()).setFragment(fragment);
     }
 }
