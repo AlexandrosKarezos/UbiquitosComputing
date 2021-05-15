@@ -12,11 +12,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="118dp"
-        android:stepSize="0.5"
         android:numStars="5"
+        android:stepSize="0.5"
         app:layout_constraintStart_toEndOf="@+id/textViewSatisfaction"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/fBAnmerkungInput"
@@ -37,10 +36,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
         android:layout_marginLeft="17dp"
-        android:layout_marginTop="133dp"
+        android:layout_marginTop="15dp"
         android:text="Zufriedenheit:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonMenu" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewFBAnmerkung"
@@ -48,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
         android:layout_marginLeft="17dp"
-        android:layout_marginTop="66dp"
+        android:layout_marginTop="70dp"
         android:text="Anmerkungen:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewSatisfaction" />

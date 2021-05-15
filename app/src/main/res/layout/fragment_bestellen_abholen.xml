@@ -7,7 +7,7 @@
     tools:context=".BestellenAbholenFragment">
 
     <TextView
-        android:id="@+id/textViewBestellung"
+        android:id="@+id/tvOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bestellung"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewMenge"
+        android:id="@+id/tvQuantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Menge"
@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewPreis"
+        android:id="@+id/tvPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Preis"
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewGesamt"
+        android:id="@+id/tvTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Gesamt"
@@ -49,7 +49,7 @@
         app:layout_constraintVertical_bias="0.219" />
 
     <View
-        android:id="@+id/dividerBestelluebersicht"
+        android:id="@+id/dividerOrderOverview"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="?android:attr/listDivider"
@@ -68,7 +68,7 @@
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewGesamt" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTotal" />
 
     <Button
         android:id="@+id/returnButton"
@@ -101,10 +101,10 @@
         android:id="@+id/scrollViewPickupItems"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/dividerBestelluebersicht"
+        app:layout_constraintBottom_toTopOf="@+id/dividerOrderOverview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewMenge">
+        app:layout_constraintTop_toBottomOf="@+id/tvQuantity">
 
         <LinearLayout
             android:layout_width="match_parent"

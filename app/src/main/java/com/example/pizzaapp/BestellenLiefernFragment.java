@@ -14,15 +14,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class BestellenLiefernFragment extends Fragment implements View.OnClickListener{
 
     private Button returnButton, abortButton, kpBestellenButton;
+    private RadioGroup radiogroupPayBL;
     private TextView creditCardDataTV;
-    private EditText creditCardNoET, expireDateET, cvvET;
+    private EditText creditCardNoET, expireDateET, cvvET, surnameET, nameET, streetET, hNrET, plzET, cityET, emailET;
     private RadioButton radioButtonCreditCard, radioButtonCash, radioButtonPaypal;
-    private EditText surnameET, nameET, streetET, hNrET, plzET, cityET, emailET;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,10 +43,11 @@ public class BestellenLiefernFragment extends Fragment implements View.OnClickLi
         creditCardNoET = (EditText) view.findViewById(R.id.editTextCreditCardNoBL);
         expireDateET = (EditText) view.findViewById(R.id.editTextExpireDateBL);
         cvvET = (EditText) view.findViewById(R.id.editTextCVVBL);
+        radiogroupPayBL = (RadioGroup) view.findViewById(R.id.radioGroup2);
         radioButtonCreditCard = (RadioButton) view.findViewById(R.id.radioButtonKreditkarte);
         radioButtonCash = (RadioButton) view.findViewById(R.id.radioButtonBargeld);
         radioButtonPaypal = (RadioButton) view.findViewById(R.id.radioButtonPayPal);
-        surnameET = (EditText) view.findViewById(R.id.blSurname);
+        surnameET = (EditText) view.findViewById(R.id.baSurname);
         nameET = (EditText) view.findViewById(R.id.blName);
         streetET = (EditText) view.findViewById(R.id.blStreet);
         hNrET = (EditText) view.findViewById(R.id.blHnr);
@@ -54,6 +56,7 @@ public class BestellenLiefernFragment extends Fragment implements View.OnClickLi
         emailET = (EditText) view.findViewById(R.id.blEmail);
 
         kpBestellenButton.setEnabled(false);
+        radioButtonCash.setChecked(true);
 
         addDeliveryBuyETChange(surnameET);
         addDeliveryBuyETChange(nameET);
@@ -62,6 +65,9 @@ public class BestellenLiefernFragment extends Fragment implements View.OnClickLi
         addDeliveryBuyETChange(plzET);
         addDeliveryBuyETChange(cityET);
         addDeliveryBuyETChange(emailET);
+        addDeliveryBuyETChange(creditCardNoET);
+        addDeliveryBuyETChange(expireDateET);
+        addDeliveryBuyETChange(cvvET);
 
         returnButton.setOnClickListener(this);
         abortButton.setOnClickListener(this);
@@ -91,6 +97,7 @@ public class BestellenLiefernFragment extends Fragment implements View.OnClickLi
                     expireDateET.setVisibility(View.VISIBLE);
                     cvvET.setVisibility(View.VISIBLE);
                 }
+                testDeliveryBuy();
                 break;
             case R.id.radioButtonBargeld:
             case R.id.radioButtonPayPal:
@@ -100,6 +107,7 @@ public class BestellenLiefernFragment extends Fragment implements View.OnClickLi
                     expireDateET.setVisibility(View.GONE);
                     cvvET.setVisibility(View.GONE);
                 }
+                testDeliveryBuy();
                 break;
             default:
                 break;
@@ -114,12 +122,24 @@ public class BestellenLiefernFragment extends Fragment implements View.OnClickLi
         String plz = plzET.getText().toString();
         String city = cityET.getText().toString();
         String email = emailET.getText().toString();
+        String cardNumber = creditCardNoET.getText().toString();
+        String expireDate = expireDateET.getText().toString();
+        String cvvNumber = cvvET.getText().toString();
 
-        if(!(surname.isEmpty() || name.isEmpty() || street.isEmpty() || hNr.isEmpty() || plz.isEmpty() || city.isEmpty() || email.isEmpty())){
-            kpBestellenButton.setEnabled(true);
+        if(radiogroupPayBL.getCheckedRadioButtonId() == R.id.radioButtonKreditkarte){
+            if(!(surname.isEmpty() || name.isEmpty() || street.isEmpty() || hNr.isEmpty() || plz.isEmpty() || city.isEmpty() || email.isEmpty() || cardNumber.isEmpty() || expireDate.isEmpty() || cvvNumber.isEmpty())){
+                kpBestellenButton.setEnabled(true);
+            }
+            else{
+                kpBestellenButton.setEnabled(false);
+            }
         }
-        else{
-            kpBestellenButton.setEnabled(false);
+        else {
+            if (!(surname.isEmpty() || name.isEmpty() || street.isEmpty() || hNr.isEmpty() || plz.isEmpty() || city.isEmpty() || email.isEmpty())) {
+                kpBestellenButton.setEnabled(true);
+            } else {
+                kpBestellenButton.setEnabled(false);
+            }
         }
     }
 

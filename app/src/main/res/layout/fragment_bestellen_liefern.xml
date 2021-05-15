@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/abortButton"
-        app:layout_constraintTop_toBottomOf="@+id/divider6">
+        app:layout_constraintTop_toBottomOf="@+id/dividerOrderOverview1">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -85,7 +85,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/blSurname"
+                android:id="@+id/baSurname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -141,7 +141,7 @@
                 android:hint="Vorname"
                 android:inputType="textPersonName"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/blSurname" />
+                app:layout_constraintTop_toBottomOf="@+id/baSurname" />
 
             <EditText
                 android:id="@+id/blPlz"
@@ -257,7 +257,7 @@
     </ScrollView>
 
     <TextView
-        android:id="@+id/textViewBestellung"
+        android:id="@+id/tvOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bestellung"
@@ -267,7 +267,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewMenge"
+        android:id="@+id/tvQuantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Menge"
@@ -277,7 +277,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewPreis"
+        android:id="@+id/tvPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Preis"
@@ -287,7 +287,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewGesamt"
+        android:id="@+id/tvTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Gesamt"
@@ -299,7 +299,7 @@
         app:layout_constraintVertical_bias="0.219" />
 
     <View
-        android:id="@+id/dividerBestelluebersicht"
+        android:id="@+id/dividerOrderOverview"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="?android:attr/listDivider"
@@ -311,14 +311,14 @@
         app:layout_constraintVertical_bias="0.2" />
 
     <View
-        android:id="@+id/divider6"
+        android:id="@+id/dividerOrderOverview1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="9dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewGesamt" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTotal" />
 
     <Button
         android:id="@+id/returnButton"
@@ -349,13 +349,13 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ScrollView
-        android:id="@+id/scrollview_bestellen_liefern"
+        android:id="@+id/svOrderDeliver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/dividerBestelluebersicht"
+        app:layout_constraintBottom_toTopOf="@+id/dividerOrderOverview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewMenge">
+        app:layout_constraintTop_toBottomOf="@+id/tvQuantity">
 
         <LinearLayout
             android:id="@+id/linearl_sv_bestellen_liefern"

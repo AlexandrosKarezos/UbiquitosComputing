@@ -27,5 +27,13 @@ public class ShoppingCart {
         return totalPrice;
     }
 
+    public int getUniqueItemCount(){
+        return articleList.size();
+    }
+
+    public void clearCart(){
+        articleList.clear();
+    }
+
 
 }

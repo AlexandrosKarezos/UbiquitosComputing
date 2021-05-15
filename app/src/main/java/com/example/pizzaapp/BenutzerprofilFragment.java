@@ -31,7 +31,7 @@ public class BenutzerprofilFragment extends Fragment {
     private String userID;
     Button abortButton, acceptButton, bestellungsVButton, logoutButton, buttonLogin;
     Switch aSwitch;
-    EditText firstnameEditText,lastnameEditText,streetEditText,postcodeEditText,streetNumberEditText,cityEditText,emailEditText,usernameEditText;
+    EditText firstnameEditText, lastnameEditText, streetEditText, postcodeEditText, streetNumberEditText, cityEditText, emailEditText, usernameEditText, passwordEditText;
 
 
 
@@ -50,15 +50,16 @@ public class BenutzerprofilFragment extends Fragment {
         acceptButton = (Button) view.findViewById(R.id.acceptButton);
         bestellungsVButton = (Button) view.findViewById(R.id.buttonBestellungsverlauf);
         logoutButton = (Button) view.findViewById(R.id.buttonLogout);
-        firstnameEditText= (EditText) view.findViewById(R.id.pNameInput);
-        lastnameEditText= (EditText) view.findViewById(R.id.pSurnameInput);
-        streetEditText= (EditText) view.findViewById(R.id.pStreetInput);
-        postcodeEditText= (EditText) view.findViewById(R.id.pPLZInput);
-        streetNumberEditText=(EditText)view.findViewById(R.id.pHNrInput);
-        cityEditText=(EditText)view.findViewById(R.id.pCityInput);
-        emailEditText=(EditText)view.findViewById(R.id.pEmailInput);
-        usernameEditText=(EditText)view.findViewById(R.id.pNewUserInput);
-        aSwitch= (Switch)view.findViewById(R.id.switchProfilBearb);
+        firstnameEditText = (EditText) view.findViewById(R.id.pNameInput);
+        lastnameEditText = (EditText) view.findViewById(R.id.pSurnameInput);
+        streetEditText = (EditText) view.findViewById(R.id.pStreetInput);
+        postcodeEditText = (EditText) view.findViewById(R.id.pPLZInput);
+        streetNumberEditText = (EditText)view.findViewById(R.id.pHNrInput);
+        cityEditText = (EditText)view.findViewById(R.id.pCityInput);
+        emailEditText = (EditText)view.findViewById(R.id.pEmailInput);
+        usernameEditText = (EditText)view.findViewById(R.id.pNewUserInput);
+        passwordEditText = (EditText)view.findViewById(R.id.pNewPwInput);
+        aSwitch = (Switch)view.findViewById(R.id.switchProfilBearb);
 
         acceptButton.setEnabled(false);
 
@@ -105,6 +106,7 @@ public class BenutzerprofilFragment extends Fragment {
                     postcodeEditText.setEnabled(true);
                     emailEditText.setEnabled(true);
                     usernameEditText.setEnabled(true);
+                    passwordEditText.setEnabled(true);
                     acceptButton.setEnabled(true);
                 }
                 if(!isChecked)
@@ -117,6 +119,7 @@ public class BenutzerprofilFragment extends Fragment {
                     postcodeEditText.setEnabled(false);
                     emailEditText.setEnabled(false);
                     usernameEditText.setEnabled(false);
+                    passwordEditText.setEnabled(false);
                     acceptButton.setEnabled(false);
                 }
             }
@@ -132,12 +135,14 @@ public class BenutzerprofilFragment extends Fragment {
             postcodeEditText.setTextColor(Color.BLACK);
             emailEditText.setTextColor(Color.BLACK);
             usernameEditText.setTextColor(Color.BLACK);
+            passwordEditText.setTextColor(Color.BLACK);
             lastnameEditText.setEnabled(false);
             streetNumberEditText.setEnabled(false);
             streetEditText.setEnabled(false);
             cityEditText.setEnabled(false);
             postcodeEditText.setEnabled(false);
             emailEditText.setEnabled(false);
+            passwordEditText.setEnabled(false);
             usernameEditText.setEnabled(false);
         }
         showAllUserData();
