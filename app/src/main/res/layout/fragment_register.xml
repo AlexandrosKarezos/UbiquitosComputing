@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterFragment">
+
+    <TextView
+        android:id="@+id/tvRRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="16dp"
+        android:text="Registrieren:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMenu" />
+
+    <EditText
+        android:id="@+id/rSurnameInputET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="1dp"
+        android:ems="10"
+        android:hint="Nachname"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRRegister" />
+
+    <EditText
+        android:id="@+id/rNameInputET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:ems="10"
+        android:hint="Vorname"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rSurnameInputET" />
+
+    <EditText
+        android:id="@+id/rStreetInputET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:ems="10"
+        android:hint="Strasse"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rNameInputET" />
+
+    <EditText
+        android:id="@+id/rHnrInputET"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:ems="10"
+        android:hint="HNr"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/rCityInputET"
+        app:layout_constraintStart_toEndOf="@+id/rStreetInputET" />
+
+    <EditText
+        android:id="@+id/rPlzInputET"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:ems="10"
+        android:hint="PLZ"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rStreetInputET" />
+
+    <EditText
+        android:id="@+id/rCityInputET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:ems="10"
+        android:hint="Ort"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/rPlzInputET"
+        app:layout_constraintTop_toBottomOf="@+id/rStreetInputET" />
+
+    <EditText
+        android:id="@+id/rEmailInputET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="3dp"
+        android:width="220sp"
+        android:ems="10"
+        android:hint="Email (Emanuel@gmx.de)"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRUserdata" />
+
+    <TextView
+        android:id="@+id/tvRUserdata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="26dp"
+        android:text="Benutzerdaten:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rUsernameInputET" />
+
+    <EditText
+        android:id="@+id/rUsernameInputET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:ems="10"
+        android:hint="Benutzername"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rPlzInputET" />
+
+    <EditText
+        android:id="@+id/rPasswordInputPT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:ems="10"
+        android:hint="Passwort"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rEmailInputET" />
+
+    <Button
+        android:id="@+id/abortButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="125dp"
+        android:text="Abbrechen"
+        app:layout_constraintStart_toEndOf="@+id/returnButton"
+        app:layout_constraintTop_toBottomOf="@+id/rPasswordInputPT" />
+
+    <Button
+        android:id="@+id/returnButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="125dp"
+        android:text="zurueck"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rPasswordInputPT" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="308dp"
+        android:text="registrieren"
+        app:layout_constraintStart_toEndOf="@+id/abortButton"
+        app:layout_constraintTop_toBottomOf="@+id/rCityInputET" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,7 +33,7 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
         c.set(Calendar.MONTH, month);
         c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
         String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
-        TextView resDateTV = (TextView) getActivity().findViewById(R.id.textViewResDate);
+        TextView resDateTV = (TextView) getActivity().findViewById(R.id.tvResDate);
         resDateTV.setText(currentDateString);
     }
 }

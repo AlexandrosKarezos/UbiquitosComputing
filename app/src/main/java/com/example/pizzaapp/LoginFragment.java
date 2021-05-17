@@ -1,6 +1,5 @@
 package com.example.pizzaapp;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -26,7 +25,7 @@ public class LoginFragment extends Fragment {
 
     Button loginButton;
     Button registerButton;
-    private EditText editTextEmail,editTextPassword;
+    private EditText emailET,passwordET;
     private FirebaseAuth mAuth;
 
     @Override
@@ -40,16 +39,16 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        loginButton = (Button) view.findViewById(R.id.buttonlLogin);
-        registerButton = (Button) view.findViewById(R.id.buttonlRegister);
-        editTextEmail = (EditText) view.findViewById(R.id.emailLogin);
-        editTextPassword = (EditText) view.findViewById(R.id.lPasswordInput);
+        loginButton = (Button) view.findViewById(R.id.loginButton);
+        registerButton = (Button) view.findViewById(R.id.lRegisterButton);
+        emailET = (EditText) view.findViewById(R.id.lEmailInputET);
+        passwordET = (EditText) view.findViewById(R.id.lPasswordInputET);
         mAuth= FirebaseAuth.getInstance();
 
         loginButton.setEnabled(false);
 
-        addLoginETChange(editTextEmail);
-        addLoginETChange(editTextPassword);
+        addLoginETChange(emailET);
+        addLoginETChange(passwordET);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,27 +60,27 @@ public class LoginFragment extends Fragment {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity) getActivity()).setFragment(new RegistrierenFragment());
+                ((MainActivity) getActivity()).setFragment(new RegisterFragment());
             }
         });
     }
 
     private void userLogin() {
-        String email=editTextEmail.getText().toString().trim();
-        String password=editTextPassword.getText().toString().trim();
+        String email=emailET.getText().toString().trim();
+        String password=passwordET.getText().toString().trim();
         if(email.isEmpty()){
-            editTextEmail.setError("Email is required!");
-            editTextEmail.requestFocus();
+            emailET.setError("Email is required!");
+            emailET.requestFocus();
             return;
         }
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            editTextEmail.setError("Please enter a valid email!");
-            editTextEmail.requestFocus();
+            emailET.setError("Please enter a valid email!");
+            emailET.requestFocus();
             return;
         }
         if(password.isEmpty()){
-            editTextPassword.setError("Password is required!");
-            editTextPassword.requestFocus();
+            passwordET.setError("Password is required!");
+            passwordET.requestFocus();
             return;
         }
         mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -89,7 +88,7 @@ public class LoginFragment extends Fragment {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     //redirect to profile
-                    ((MainActivity) getActivity()).setFragment(new BenutzerprofilFragment());
+                    ((MainActivity) getActivity()).setFragment(new UserProfilelFragment());
                 }else{
                     Toast.makeText(getActivity(),"Failed to login! Please check your credentials",Toast.LENGTH_LONG).show();
 
@@ -112,8 +111,8 @@ public class LoginFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                String email = editTextEmail.getText().toString();
-                String passwort = editTextPassword.getText().toString();
+                String email = emailET.getText().toString();
+                String passwort = passwordET.getText().toString();
 
                 if(!(passwort.isEmpty() || email.isEmpty())){
                     loginButton.setEnabled(true);

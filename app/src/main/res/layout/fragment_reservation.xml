@@ -8,7 +8,7 @@
     tools:context=".ReservationFragment">
 
     <Button
-        android:id="@+id/buttonDate"
+        android:id="@+id/resDateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonMenu" />
 
     <Button
-        android:id="@+id/buttonReservieren"
+        android:id="@+id/resConfirmButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="59dp"
@@ -29,10 +29,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resEmailInput" />
+        app:layout_constraintTop_toBottomOf="@+id/resEmailInputET" />
 
     <EditText
-        android:id="@+id/ResSurname"
+        android:id="@+id/resSurnameInputET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -42,10 +42,10 @@
         android:hint="Nachname"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numberPicker" />
+        app:layout_constraintTop_toBottomOf="@+id/msNumberPicker" />
 
     <EditText
-        android:id="@+id/resNameInput"
+        android:id="@+id/resNameInputET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -54,10 +54,10 @@
         android:hint="Vorname"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ResSurname" />
+        app:layout_constraintTop_toBottomOf="@+id/resSurnameInputET" />
 
     <EditText
-        android:id="@+id/resEmailInput"
+        android:id="@+id/resEmailInputET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -67,10 +67,10 @@
         android:hint="Email (Emanuel@gmx.de)"
         android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resNameInput" />
+        app:layout_constraintTop_toBottomOf="@+id/resNameInputET" />
 
     <TextView
-        android:id="@+id/textViewResNmbPers"
+        android:id="@+id/tvResNmbPers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -78,26 +78,26 @@
         android:layout_marginTop="53dp"
         android:text="Personen:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonDate" />
+        app:layout_constraintTop_toBottomOf="@+id/resDateButton" />
 
     <NumberPicker
-        android:id="@+id/numberPicker"
+        android:id="@+id/msNumberPicker"
         android:layout_width="48dp"
         android:layout_height="101dp"
         android:layout_marginStart="31dp"
         android:layout_marginLeft="31dp"
         android:layout_marginTop="17dp"
-        app:layout_constraintStart_toEndOf="@+id/textViewResNmbPers"
-        app:layout_constraintTop_toBottomOf="@+id/buttonDate" />
+        app:layout_constraintStart_toEndOf="@+id/tvResNmbPers"
+        app:layout_constraintTop_toBottomOf="@+id/resDateButton" />
 
     <Button
-        android:id="@+id/timeButton"
+        android:id="@+id/resTimeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="59dp"
         android:layout_marginLeft="59dp"
         android:text="Uhrzeit"
-        app:layout_constraintStart_toEndOf="@+id/buttonDate"
+        app:layout_constraintStart_toEndOf="@+id/resDateButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -109,10 +109,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonReservieren" />
+        app:layout_constraintTop_toBottomOf="@+id/resConfirmButton" />
 
     <TextView
-        android:id="@+id/textViewResDate"
+        android:id="@+id/tvResDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -122,7 +122,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewResTime"
+        android:id="@+id/tvResTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="234dp"
@@ -132,7 +132,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewAnzPers"
+        android:id="@+id/tvNmbPers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"

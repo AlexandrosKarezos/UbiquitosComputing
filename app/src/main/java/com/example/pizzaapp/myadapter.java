@@ -11,20 +11,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.firebase.ui.database.ObservableSnapshotArray;
-import com.google.firebase.database.DataSnapshot;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class myadapter extends FirebaseRecyclerAdapter<Meal, myadapter.myviewholder>
+public class MyAdapter extends FirebaseRecyclerAdapter<Meal, MyAdapter.myviewholder>
 {
     private ObservableSnapshotArray<Meal> mMeals;
     private OnCardListener mOnCardListener;
 
 
-    public myadapter(@NonNull FirebaseRecyclerOptions<Meal> options, OnCardListener onCardListener) {
+    public MyAdapter(@NonNull FirebaseRecyclerOptions<Meal> options, OnCardListener onCardListener) {
         super(options);
         mMeals = options.getSnapshots();
         this.mOnCardListener = onCardListener;

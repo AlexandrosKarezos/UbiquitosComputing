@@ -7,18 +7,18 @@
     tools:context=".FeedbackFragment">
 
     <RatingBar
-        android:id="@+id/ratingBar"
+        android:id="@+id/ratingBarFB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:numStars="5"
         android:stepSize="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textViewSatisfaction"
+        app:layout_constraintStart_toEndOf="@+id/tvFBSatisfaction"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/fBAnmerkungInput"
+        android:id="@+id/fbNoteInputMLT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="22dp"
@@ -27,11 +27,11 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        app:layout_constraintStart_toEndOf="@+id/textViewFBAnmerkung"
-        app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+        app:layout_constraintStart_toEndOf="@+id/tvFBNotes"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBarFB" />
 
     <TextView
-        android:id="@+id/textViewSatisfaction"
+        android:id="@+id/tvFBSatisfaction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
@@ -42,7 +42,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewFBAnmerkung"
+        android:id="@+id/tvFBNotes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
@@ -50,7 +50,7 @@
         android:layout_marginTop="70dp"
         android:text="Anmerkungen:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewSatisfaction" />
+        app:layout_constraintTop_toBottomOf="@+id/tvFBSatisfaction" />
 
     <Button
         android:id="@+id/abortButton"
@@ -61,7 +61,7 @@
         app:layout_constraintEnd_toStartOf="@+id/submitFBButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fBAnmerkungInput" />
+        app:layout_constraintTop_toBottomOf="@+id/fbNoteInputMLT" />
 
     <Button
         android:id="@+id/submitFBButton"
@@ -72,6 +72,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/abortButton"
-        app:layout_constraintTop_toBottomOf="@+id/fBAnmerkungInput" />
+        app:layout_constraintTop_toBottomOf="@+id/fbNoteInputMLT" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

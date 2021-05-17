@@ -21,7 +21,7 @@
         android:id="@+id/buttonMenu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:onClick="menue"
+        android:onClick="menu"
         android:text="Menü"
         android:visibility="visible"
         app:layout_constraintEnd_toStartOf="@+id/buttonReservation"

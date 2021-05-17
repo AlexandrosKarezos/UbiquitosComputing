@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PickupFragment">
+
+    <TextView
+        android:id="@+id/tvContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="11dp"
+        android:text="Kontakt:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMenu" />
+
+    <EditText
+        android:id="@+id/surnameInputET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="23dp"
+        android:ems="10"
+        android:hint="Nachname"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvContact" />
+
+    <EditText
+        android:id="@+id/nameInputET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="23dp"
+        android:ems="10"
+        android:hint="Vorname"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/surnameInputET" />
+
+    <EditText
+        android:id="@+id/streetInputET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="23dp"
+        android:ems="10"
+        android:hint="Strasse"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameInputET" />
+
+    <EditText
+        android:id="@+id/hNrInputET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:width="100sp"
+        android:ems="10"
+        android:hint="HNr"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/cityInputET"
+        app:layout_constraintStart_toEndOf="@+id/streetInputET" />
+
+    <EditText
+        android:id="@+id/plzInputET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="23dp"
+        android:width="100sp"
+        android:ems="10"
+        android:hint="PLZ"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/streetInputET" />
+
+    <EditText
+        android:id="@+id/cityInputET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:ems="10"
+        android:hint="Ort"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/plzInputET"
+        app:layout_constraintTop_toBottomOf="@+id/streetInputET" />
+
+    <EditText
+        android:id="@+id/emailInputET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="38dp"
+        android:width="220sp"
+        android:ems="10"
+        android:hint="Email (Emanuel@gmx.de)"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plzInputET" />
+
+    <Button
+        android:id="@+id/abortPickupButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Abbrechen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/continuePickupButton"
+        app:layout_constraintStart_toEndOf="@+id/returnPickupButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.65" />
+
+    <Button
+        android:id="@+id/returnPickupButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="zurueck"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.65" />
+
+    <Button
+        android:id="@+id/continuePickupButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="weiter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.65" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

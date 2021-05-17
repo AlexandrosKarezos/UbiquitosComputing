@@ -1,7 +1,6 @@
 package com.example.pizzaapp;
 
 import android.app.AlertDialog;
-import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
 
@@ -16,26 +15,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
-import java.text.DateFormat;
-import java.util.Calendar;
 import java.util.Locale;
 
 public class ReservationFragment extends Fragment{
 
-    TextView anzPersTV;
+    TextView nmbPersTV;
     TextView resTimeTV;
     TextView resDateTV;
     int hour, minute;
     NumberPicker numberPicker;
     Button dateButton;
     Button timeButton;
-    Button reservierenButton;
+    Button reservationButton;
     Button abortButton;
     EditText surnameET, nameET, emailET;
 
@@ -50,23 +46,23 @@ public class ReservationFragment extends Fragment{
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        anzPersTV = view.findViewById(R.id.textViewAnzPers);
-        resTimeTV = view.findViewById(R.id.textViewResTime);
-        dateButton = view.findViewById(R.id.buttonDate);
-        timeButton = view.findViewById(R.id.timeButton);
-        numberPicker = view.findViewById(R.id.numberPicker);
-        resDateTV = view.findViewById(R.id.textViewResDate);
-        reservierenButton = view.findViewById(R.id.buttonReservieren);
+        nmbPersTV = view.findViewById(R.id.tvNmbPers);
+        resTimeTV = view.findViewById(R.id.tvResTime);
+        dateButton = view.findViewById(R.id.resDateButton);
+        timeButton = view.findViewById(R.id.resTimeButton);
+        numberPicker = view.findViewById(R.id.msNumberPicker);
+        resDateTV = view.findViewById(R.id.tvResDate);
+        reservationButton = view.findViewById(R.id.resConfirmButton);
         abortButton = view.findViewById(R.id.abortButton);
-        surnameET = view.findViewById(R.id.ResSurname);
-        nameET = view.findViewById(R.id.resNameInput);
-        emailET = view.findViewById(R.id.resEmailInput);
+        surnameET = view.findViewById(R.id.resSurnameInputET);
+        nameET = view.findViewById(R.id.resNameInputET);
+        emailET = view.findViewById(R.id.resEmailInputET);
 
         addReservationETChange(surnameET);
         addReservationETChange(nameET);
         addReservationETChange(emailET);
 
-        reservierenButton.setEnabled(false);
+        reservationButton.setEnabled(false);
 
         dateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +79,7 @@ public class ReservationFragment extends Fragment{
         numberPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                anzPersTV.setText("Anzahl Personen: " + newVal);
+                nmbPersTV.setText("Anzahl Personen: " + newVal);
                 testReservation();
             }
         });
@@ -109,7 +105,7 @@ public class ReservationFragment extends Fragment{
             }
         });
 
-        reservierenButton.setOnClickListener(new View.OnClickListener() {
+        reservationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((MainActivity) getActivity()).setFragment(new StartFragment());
@@ -127,7 +123,7 @@ public class ReservationFragment extends Fragment{
     }
 
     public void testReservation(){
-        String anzPers = anzPersTV.getText().toString();
+        String anzPers = nmbPersTV.getText().toString();
         String resTime = resTimeTV.getText().toString();
         String resDate = resDateTV.getText().toString();
         String surname = surnameET.getText().toString();
@@ -135,10 +131,10 @@ public class ReservationFragment extends Fragment{
         String email = emailET.getText().toString();
 
         if(!(anzPers.isEmpty() || resTime.isEmpty() || resDate.isEmpty() || surname.isEmpty() || name.isEmpty() || email.isEmpty())){
-            reservierenButton.setEnabled(true);
+            reservationButton.setEnabled(true);
         }
         else{
-            reservierenButton.setEnabled(false);
+            reservationButton.setEnabled(false);
         }
     }
 

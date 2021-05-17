@@ -5,18 +5,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.app.DatePickerDialog;
-import android.content.Intent;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.View;
-import android.widget.DatePicker;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-import java.text.DateFormat;
-import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseUser user;
@@ -35,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
-    public void menue(View view){
-        setFragment(new MenueFragment());
+    public void menu(View view){
+        setFragment(new MenuFragment());
     }
 
     public void reservation(View view){
@@ -51,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(FirebaseAuth.getInstance().getCurrentUser()!=null)
         {
-            setFragment(new BenutzerprofilFragment());
+            setFragment(new UserProfilelFragment());
         }
         else{
             setFragment(new LoginFragment());
