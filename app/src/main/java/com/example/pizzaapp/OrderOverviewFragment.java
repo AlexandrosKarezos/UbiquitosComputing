@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 public class OrderOverviewFragment extends Fragment implements View.OnClickListener {
@@ -26,7 +28,8 @@ public class OrderOverviewFragment extends Fragment implements View.OnClickListe
     Button abortButton;
     Button returnButton;
     Button continueButton;
-    LinearLayout orderOverviewLL;
+    TableLayout orderOverviewTL;
+    TextView totalPriceTV;
     private ShoppingCart shopcart;
 
     @Override
@@ -49,7 +52,8 @@ public class OrderOverviewFragment extends Fragment implements View.OnClickListe
         pickupButton = (RadioButton) view.findViewById(R.id.rbOOPickup);
         abortButton = (Button) view.findViewById(R.id.abortButton);
         returnButton = (Button) view.findViewById(R.id.returnButton);
-        orderOverviewLL = (LinearLayout) view.findViewById(R.id.linlayoutOO);
+        orderOverviewTL = (TableLayout) view.findViewById(R.id.tableLayoutOO);
+        totalPriceTV = (TextView) view.findViewById(R.id.tvOOTotalPrice);
 
         continueButton.setEnabled(false);
 
@@ -59,15 +63,24 @@ public class OrderOverviewFragment extends Fragment implements View.OnClickListe
         returnButton.setOnClickListener(this);
         continueButton.setOnClickListener(this);
 
-        TextView testTV;
-        LinearLayout testLL;
+        totalPriceTV.setText(Double.toString(shopcart.getTotalPrice()));
+
+        TextView nameTV;
+        TextView amountTV;
+        TextView preisTV;
+        TableRow testTR;
         ImageView tempImgV;
+
+        TableLayout.LayoutParams tableParams = new TableLayout.LayoutParams(TableLayout.LayoutParams.WRAP_CONTENT, TableLayout.LayoutParams.WRAP_CONTENT);
+        tableParams.leftMargin = 50;
+        TableRow.LayoutParams rowParams = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
+        rowParams.rightMargin = 110;
         for(int i=0; i<shopcart.getUniqueItemCount(); i++)
         {
             tempImgV = new ImageView(getActivity());
             tempImgV.setImageResource(android.R.drawable.ic_delete);
             tempImgV.setClickable(true);
-            tempImgV.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+            tempImgV.setLayoutParams(rowParams);
             tempImgV.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -75,19 +88,34 @@ public class OrderOverviewFragment extends Fragment implements View.OnClickListe
                 }
             });
 
-            testLL =  new LinearLayout(getActivity());
-            testLL.setOrientation(LinearLayout.HORIZONTAL);
-            testLL.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, 1f));
+            testTR =  new TableRow(getActivity());
+            testTR.setLayoutParams(tableParams);
 
-            testTV = new TextView(getActivity());
-            testTV.setTextSize(15);
-            testTV.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-            testTV.setId(View.generateViewId());
-            testTV.setText(shopcart.getItem(i).getName()+"  "+shopcart.getItem(i).getAmount()+"  "+shopcart.getItem(i).getAmount()*shopcart.getItem(i).getPrice());
-            testLL.addView(testTV);
-            testLL.addView(tempImgV);
+            nameTV = new TextView(getActivity());
+            nameTV.setTextSize(20);
+            nameTV.setLayoutParams(rowParams);
+            nameTV.setId(View.generateViewId());
+            nameTV.setText(shopcart.getItem(i).getName());
 
-            orderOverviewLL.addView(testLL);
+            amountTV = new TextView(getActivity());
+            amountTV.setTextSize(20);
+            amountTV.setLayoutParams(rowParams);
+            amountTV.setId(View.generateViewId());
+            amountTV.setText(Double.toString(shopcart.getItem(i).getAmount()));
+
+            preisTV = new TextView(getActivity());
+            preisTV.setTextSize(20);
+            preisTV.setLayoutParams(rowParams);
+            preisTV.setId(View.generateViewId());
+            preisTV.setText(Double.toString(shopcart.getItem(i).getAmount() * shopcart.getItem(i).getPrice()));
+
+            testTR.addView(nameTV);
+            testTR.addView(amountTV);
+            testTR.addView(preisTV);
+            testTR.addView(tempImgV);
+
+
+            orderOverviewTL.addView(testTR);
         }
     }
 
