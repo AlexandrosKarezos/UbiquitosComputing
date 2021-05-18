@@ -19,6 +19,15 @@ import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Locale;
 
@@ -34,6 +43,11 @@ public class ReservationFragment extends Fragment{
     Button reservationButton;
     Button abortButton;
     EditText surnameET, nameET, emailET;
+    private FirebaseUser user;
+    private DatabaseReference reference;
+    private String userID;
+    private FirebaseDatabase db=FirebaseDatabase.getInstance();
+    private DatabaseReference root=db.getReference().child("Reservation");
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -69,7 +83,6 @@ public class ReservationFragment extends Fragment{
             public void onClick(View v) {
                 DialogFragment datePicker = new DatePickerFragment();
                 datePicker.show(getFragmentManager(), "date picker");
-                testReservation();
             }
         });
 
@@ -109,6 +122,15 @@ public class ReservationFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 ((MainActivity) getActivity()).setFragment(new StartFragment());
+                String anzPers = nmbPersTV.getText().toString();
+                String resTime = resTimeTV.getText().toString();
+                String resDate = resDateTV.getText().toString();
+                String surname = surnameET.getText().toString();
+                String name = nameET.getText().toString();
+                String email = emailET.getText().toString();
+                Reservation reservierung= new Reservation(anzPers,resTime,resDate,surname,name,email);
+                root.push().setValue(reservierung);
+                Toast.makeText(getActivity(),"Thank you for your reservation!",Toast.LENGTH_LONG).show();
             }
         });
 
@@ -153,6 +175,35 @@ public class ReservationFragment extends Fragment{
             @Override
             public void afterTextChanged(Editable s) {
                 testReservation();
+            }
+        });
+    }
+
+    private void showAllUserData()
+    {
+        user= FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users");
+        userID=user.getUid();
+        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User userProfile = snapshot.getValue((User.class));
+                if(FirebaseAuth.getInstance().getCurrentUser()!=null)
+                {
+
+                    String surname = userProfile.lastName;
+                    String name = userProfile.firstName;
+                    String email = userProfile.email;
+                    nameET.setText(name);
+                    surnameET.setText(surname);
+                    emailET.setText(email);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
     }
