@@ -14,10 +14,23 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 public class PickupFragment extends Fragment {
 
     Button submitButton, returnButton, abortButton;
     private EditText surnameET, nameET, streetET, hNrET, plzET, cityET, emailET;
+    private FirebaseUser user;
+    private DatabaseReference reference;
+    private String userID;
+    private FirebaseDatabase db=FirebaseDatabase.getInstance();
+    public static String surname1,name1,street1,hNr1,plz1,city1,email1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,6 +68,13 @@ public class PickupFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 ((MainActivity) getActivity()).setFragment(new OrderPickupFragment());
+                surname1=surnameET.getText().toString();
+                name1=nameET.getText().toString();
+                plz1=plzET.getText().toString();
+                street1=streetET.getText().toString();
+                hNr1=hNrET.getText().toString();
+                email1=emailET.getText().toString();
+                city1=cityET.getText().toString();
             }
         });
 
@@ -71,6 +91,11 @@ public class PickupFragment extends Fragment {
                 ((MainActivity) getActivity()).setFragment(new OrderOverviewFragment());
             }
         });
+
+        if(FirebaseAuth.getInstance().getCurrentUser()!=null)
+        {
+            showAllUserData();
+        }
     }
 
     public void addPickupETChange(EditText editText){
@@ -101,6 +126,44 @@ public class PickupFragment extends Fragment {
                 else{
                     submitButton.setEnabled(false);
                 }
+            }
+        });
+    }
+
+    private void showAllUserData()
+    {
+        user= FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users");
+        userID=user.getUid();
+        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User userProfile = snapshot.getValue((User.class));
+                if(FirebaseAuth.getInstance().getCurrentUser()!=null)
+                {
+
+                    String surname = userProfile.lastName;
+                    String name = userProfile.firstName;
+                    String email = userProfile.email;
+                    String hnr=userProfile.streetNumber;
+                    String plz=userProfile.postCode;
+                    String stadt=userProfile.city;
+                    String strasse=userProfile.street;
+                    cityET.setText(stadt);
+                    nameET.setText(name);
+                    plzET.setText(plz);
+                    hNrET.setText(hnr);
+                    streetET.setText(strasse);
+                    surnameET.setText(surname);
+                    emailET.setText(email);
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
     }

@@ -7,36 +7,6 @@
     tools:context=".OrderPickupFragment">
 
     <TextView
-        android:id="@+id/tvOrder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bestellung"
-        app:layout_constraintHorizontal_bias="0.249"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvQuantity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Menge"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Preis"
-        app:layout_constraintHorizontal_bias="0.691"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/tvTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -97,20 +67,69 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <ScrollView
-        android:id="@+id/svPickupItems"
+    <TableLayout
+        android:id="@+id/tableLayoutOP"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/dividerOrderOverviewOD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvQuantity">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_weight="1"
+                android:text="Gericht"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:text="Menge"
+                android:textSize="16sp"></TextView>
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_weight="1"
+                android:text="Preis"
+                android:textSize="16sp"></TextView>
+
+            <TextView
+                android:id="@+id/tvEntfernenOP"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_column="3"
+                android:layout_weight="1"
+                android:text="Entfernen"
+                android:textSize="16sp" />
+        </TableRow>
+
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
+            android:layout_height="2dp"
+            android:background="@color/black" />
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TableLayout
+                android:id="@+id/orders_tableOP"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:stretchColumns="*" />
+        </ScrollView>
+    </TableLayout>
 
     <ScrollView
         android:id="@+id/scrollViewPickupForm"
@@ -153,7 +172,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvOPPayment" />
 
             <TextView
-                android:id="@+id/tvODContactAdr"
+                android:id="@+id/tvOPContactAdr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -172,7 +191,7 @@
                 android:hint="Nachname"
                 android:inputType="textPersonName"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvODContactAdr" />
+                app:layout_constraintTop_toBottomOf="@+id/tvOPContactAdr" />
 
             <EditText
                 android:id="@+id/opNameInputET"
@@ -329,5 +348,17 @@
                 app:layout_constraintTop_toBottomOf="@+id/rGOPPayment" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <TextView
+        android:id="@+id/tvTotalPriceOP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.0 €"
+        app:layout_constraintBottom_toTopOf="@+id/scrollViewPickupForm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.554"
+        app:layout_constraintStart_toEndOf="@+id/tvTotal"
+        app:layout_constraintTop_toBottomOf="@+id/dividerOrderOverviewOD"
+        app:layout_constraintVertical_bias="0.391" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

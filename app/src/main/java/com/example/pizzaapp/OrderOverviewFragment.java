@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -19,6 +20,7 @@ import android.widget.RadioGroup;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class OrderOverviewFragment extends Fragment implements View.OnClickListener {
 
@@ -28,7 +30,7 @@ public class OrderOverviewFragment extends Fragment implements View.OnClickListe
     Button abortButton;
     Button returnButton;
     Button continueButton;
-    TableLayout orderOverviewTL;
+    TableLayout ordersTL;
     TextView totalPriceTV;
     private ShoppingCart shopcart;
 
@@ -52,7 +54,7 @@ public class OrderOverviewFragment extends Fragment implements View.OnClickListe
         pickupButton = (RadioButton) view.findViewById(R.id.rbOOPickup);
         abortButton = (Button) view.findViewById(R.id.abortButton);
         returnButton = (Button) view.findViewById(R.id.returnButton);
-        orderOverviewTL = (TableLayout) view.findViewById(R.id.tableLayoutOO);
+        ordersTL = (TableLayout) view.findViewById(R.id.orders_tableOO);
         totalPriceTV = (TextView) view.findViewById(R.id.tvOOTotalPrice);
 
         continueButton.setEnabled(false);
@@ -63,7 +65,7 @@ public class OrderOverviewFragment extends Fragment implements View.OnClickListe
         returnButton.setOnClickListener(this);
         continueButton.setOnClickListener(this);
 
-        totalPriceTV.setText(Double.toString(shopcart.getTotalPrice()));
+        totalPriceTV.setText(Double.toString(shopcart.getTotalPrice())+"€");
 
         TextView nameTV;
         TextView amountTV;
@@ -72,39 +74,34 @@ public class OrderOverviewFragment extends Fragment implements View.OnClickListe
         ImageView tempImgV;
 
         TableLayout.LayoutParams tableParams = new TableLayout.LayoutParams(TableLayout.LayoutParams.WRAP_CONTENT, TableLayout.LayoutParams.WRAP_CONTENT);
-        tableParams.leftMargin = 50;
-        TableRow.LayoutParams rowParams = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
-        rowParams.rightMargin = 110;
+        TableRow.LayoutParams rowParams = new TableRow.LayoutParams(30, TableRow.LayoutParams.WRAP_CONTENT, 1f);
+        TableRow.LayoutParams rowParamsName = new TableRow.LayoutParams(150, TableRow.LayoutParams.WRAP_CONTENT, 1f);
+
         for(int i=0; i<shopcart.getUniqueItemCount(); i++)
         {
             tempImgV = new ImageView(getActivity());
             tempImgV.setImageResource(android.R.drawable.ic_delete);
             tempImgV.setClickable(true);
             tempImgV.setLayoutParams(rowParams);
-            tempImgV.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    System.out.println("deleteTest");
-                }
-            });
 
             testTR =  new TableRow(getActivity());
+            testTR.setId(View.generateViewId());
             testTR.setLayoutParams(tableParams);
 
             nameTV = new TextView(getActivity());
-            nameTV.setTextSize(20);
-            nameTV.setLayoutParams(rowParams);
+            nameTV.setTextSize(16);
+            nameTV.setLayoutParams(rowParamsName);
             nameTV.setId(View.generateViewId());
             nameTV.setText(shopcart.getItem(i).getName());
 
             amountTV = new TextView(getActivity());
-            amountTV.setTextSize(20);
+            amountTV.setTextSize(16);
             amountTV.setLayoutParams(rowParams);
             amountTV.setId(View.generateViewId());
             amountTV.setText(Double.toString(shopcart.getItem(i).getAmount()));
 
             preisTV = new TextView(getActivity());
-            preisTV.setTextSize(20);
+            preisTV.setTextSize(16);
             preisTV.setLayoutParams(rowParams);
             preisTV.setId(View.generateViewId());
             preisTV.setText(Double.toString(shopcart.getItem(i).getAmount() * shopcart.getItem(i).getPrice()));
@@ -114,8 +111,21 @@ public class OrderOverviewFragment extends Fragment implements View.OnClickListe
             testTR.addView(preisTV);
             testTR.addView(tempImgV);
 
+            ShoppingCartItem item = shopcart.getItem(i);
+            TableRow finalTestTR = testTR;
+            tempImgV.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    shopcart.removeItem(item);
+                    ((ViewManager) finalTestTR.getParent()).removeView(finalTestTR);
+                    totalPriceTV.setText(Double.toString(shopcart.getTotalPrice())+"€");
+                    if(shopcart.getUniqueItemCount() == 0){
+                        continueButton.setEnabled(false);
+                    }
+                }
+            });
 
-            orderOverviewTL.addView(testTR);
+            ordersTL.addView(testTR);
         }
     }
 
@@ -124,7 +134,9 @@ public class OrderOverviewFragment extends Fragment implements View.OnClickListe
         switch(v.getId()){
             case R.id.rbOODeliver:
             case R.id.rbOOPickup:
-                continueButton.setEnabled(true);
+                if(shopcart.getUniqueItemCount() > 0){
+                    continueButton.setEnabled(true);
+                }
                 break;
             case R.id.abortButton:
                 shopcart.clearCart();
@@ -136,7 +148,13 @@ public class OrderOverviewFragment extends Fragment implements View.OnClickListe
             case R.id.continueButton:
                 if(rGOOOrderType.getCheckedRadioButtonId() == R.id.rbOODeliver){
                     //liefern
-                    ((MainActivity) getActivity()).setFragment(new DeliveryFragment());
+                    if(shopcart.getTotalPrice() >= 20){
+                        ((MainActivity) getActivity()).setFragment(new DeliveryFragment());
+                    }
+                    else{
+                        Toast.makeText(getActivity(),"Gesamtpreis muss mindestens 20€ betragen",Toast.LENGTH_LONG).show();
+                    }
+
                 }
                 else{
                     //abholen
