@@ -130,7 +130,7 @@ public class ReservationFragment extends Fragment{
                 String email = emailET.getText().toString();
                 Reservation reservierung= new Reservation(anzPers,resTime,resDate,surname,name,email,false);
                 root.push().setValue(reservierung);
-                Toast.makeText(getActivity(),"Thank you for your reservation!",Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(),"Danke für Ihre Reservierung!",Toast.LENGTH_LONG).show();
             }
         });
 

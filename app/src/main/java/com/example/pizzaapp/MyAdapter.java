@@ -30,9 +30,14 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Meal, MyAdapter.myviewhol
     protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull Meal model)
     {
         holder.name.setText(model.getName());
-        holder.price.setText(String.valueOf(model.getPrice()));
-        holder.topping.setText(model.getTopping());
-        holder.veg.setText(String.valueOf(model.isVeg()));
+        holder.price.setText(String.valueOf(model.getPrice())+" €");
+        holder.topping.setText("Zutaten: "+model.getTopping());
+        if(model.isVeg()){
+            holder.veg.setText("(vegetarisch)");
+        }
+        else{
+            holder.veg.setText("");
+        }
     }
 
     @NonNull

@@ -13,7 +13,7 @@
         android:id="@+id/singlerowRL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp">
+        android:padding="10dp">
 
 
         <TextView
@@ -23,7 +23,7 @@
             android:layout_marginLeft="10dp"
             android:text="NAME:"
             android:textColor="#000"
-            android:textSize="25sp"
+            android:textSize="16sp"
 
             android:textStyle="bold" />
 
@@ -35,7 +35,7 @@
             android:layout_marginLeft="10dp"
             android:text="PRICE:"
             android:textColor="#000"
-            android:textSize="25sp" />
+            android:textSize="16sp" />
 
 
         <TextView
@@ -46,7 +46,7 @@
             android:layout_marginLeft="10dp"
             android:text="TOPPING:"
             android:textColor="#000"
-            android:textSize="25sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/vegtext"
@@ -56,7 +56,7 @@
             android:layout_marginLeft="10dp"
             android:text="VEG:"
             android:textColor="#000"
-            android:textSize="25sp" />
+            android:textSize="16sp" />
 
 
     </RelativeLayout>
