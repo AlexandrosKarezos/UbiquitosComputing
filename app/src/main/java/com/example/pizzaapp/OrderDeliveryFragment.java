@@ -217,7 +217,7 @@ public class OrderDeliveryFragment extends Fragment implements View.OnClickListe
                 Order order = new Order(DeliveryFragment.surname2,DeliveryFragment.name2,DeliveryFragment.plz2,DeliveryFragment.city2,DeliveryFragment.street2, DeliveryFragment.hNr2, DeliveryFragment.email2,DeliveryFragment.note2,currentTime, articleList, paymentmethod, DeliveryFragment.etage2, false);
                 root.push().setValue(order);
                 Toast.makeText(getActivity(),"Danke für die Bestellung",Toast.LENGTH_LONG).show();
-                ((MainActivity) getActivity()).setFragment(new StartFragment());
+                ((MainActivity) getActivity()).paypal(getActivity().findViewById(R.id.orderButton));
                 break;
             case R.id.rbODCreditcard:
                 if(rbODCreditCard.isChecked()){

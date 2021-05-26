@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -51,5 +52,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    public void paypal(View view){
+        Intent intent = new Intent(this, PaypalActivity.class);
+        startActivity(intent);
     }
 }

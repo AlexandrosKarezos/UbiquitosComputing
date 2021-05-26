@@ -211,7 +211,7 @@ public class OrderPickupFragment extends Fragment implements View.OnClickListene
                 Order order = new Order(PickupFragment.surname1,PickupFragment.name1,PickupFragment.plz1,PickupFragment.city1,PickupFragment.street1, PickupFragment.hNr1, PickupFragment.email1, paymentmethod, currentTime, articleList, false);
                 root.push().setValue(order);
                 Toast.makeText(getActivity(),"Danke für die Bestellung",Toast.LENGTH_LONG).show();
-                ((MainActivity) getActivity()).setFragment(new StartFragment());
+                ((MainActivity) getActivity()).paypal(getActivity().findViewById(R.id.orderButton));
                 break;
             case R.id.rbOPCreditcard:
                 if(rGPaymentOP.getCheckedRadioButtonId() == R.id.rbOPCreditcard){
