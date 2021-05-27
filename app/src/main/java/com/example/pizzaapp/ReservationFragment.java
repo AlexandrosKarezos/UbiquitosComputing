@@ -108,13 +108,13 @@ public class ReservationFragment extends Fragment{
                         hour = selectedHour;
                         minute = selectedMinute;
                         resTimeTV.setText(String.format(Locale.getDefault(), "%02d:%02d Uhr", hour,minute));
+                        testReservation();
                     }
                 };
                 int style = AlertDialog.THEME_HOLO_DARK;
                 TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(), style, onTimeSetListener, hour, minute, true);
                 timePickerDialog.setTitle("Uhrzeit waehlen");
                 timePickerDialog.show();
-                testReservation();
             }
         });
 
@@ -140,6 +140,11 @@ public class ReservationFragment extends Fragment{
                 ((MainActivity) getActivity()).setFragment(new StartFragment());
             }
         });
+
+        if(FirebaseAuth.getInstance().getCurrentUser()!=null)
+        {
+            showAllUserData();
+        }
 
 
     }

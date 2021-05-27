@@ -145,10 +145,10 @@ public class PickupFragment extends Fragment {
                     String surname = userProfile.lastName;
                     String name = userProfile.firstName;
                     String email = userProfile.email;
-                    String hnr=userProfile.streetNumber;
-                    String plz=userProfile.postCode;
-                    String stadt=userProfile.city;
-                    String strasse=userProfile.street;
+                    String hnr = userProfile.streetNumber;
+                    String plz = userProfile.postCode;
+                    String stadt = userProfile.city;
+                    String strasse = userProfile.street;
                     cityET.setText(stadt);
                     nameET.setText(name);
                     plzET.setText(plz);
