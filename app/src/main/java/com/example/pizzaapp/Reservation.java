@@ -1,5 +1,5 @@
 package com.example.pizzaapp;
-
+// Klasse für die Reservierung
 public class Reservation {
     public String anzPers,resTime,resDate,surname,name,email;
     public boolean isDone;
